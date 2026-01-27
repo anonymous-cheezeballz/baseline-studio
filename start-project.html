@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <!-- Start Project Hero -->
     <section class="sp-hero" aria-labelledby="sp-hero-title">
       <div class="sp-hero__inner">
@@ -59,9 +58,21 @@
           </p>
         </header>
 
-        <form class="sp-form__card" action="#" method="post">
-          <div class="sp-form__grid">
+        <form
+          class="sp-form__card"
+          action="https://formspree.io/f/abcdwxyz"
+          method="POST"
+        >
+          <input type="hidden" name="_redirect" value="thanks.html" />
+          <input
+            type="text"
+            name="_gotcha"
+            style="display:none"
+            tabindex="-1"
+            autocomplete="off"
+          />
 
+          <div class="sp-form__grid">
             <div class="sp-field">
               <label class="sp-label" for="sp-name">Name</label>
               <input
@@ -71,6 +82,7 @@
                 type="text"
                 required
                 placeholder="Your name"
+                autocomplete="name"
               />
             </div>
 
@@ -83,6 +95,8 @@
                 type="email"
                 required
                 placeholder="you@company.com"
+                autocomplete="email"
+                inputmode="email"
               />
             </div>
 
@@ -135,6 +149,5 @@
         </form>
       </div>
     </section>
-
   </body>
 </html>
