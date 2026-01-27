@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Baseline Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Baseline Studio designs and builds high-quality websites for small businesses—balancing aesthetics with function."
+    />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="logo" href="#main" aria-label="Baseline Studio home">
+        Baseline Studio
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#deliverables">Core Qualities</a>
+        <a href="./about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <h1>
+          Designed with intention.<br />
+          Built to perform.
+        </h1>
+
+        <p>
+          Baseline Studio designs and builds high-quality websites that balance
+          aesthetics with function.
+        </p>
+
+        <a class="cta" href="#contact">Start a project</a>
+      </section>
+
+      <!-- Work -->
+      <section id="work" class="section">
+        <h2>Work</h2>
+
+        <div class="work-grid">
+          <a class="work-card" href="#" aria-label="View Project Alpha">
+            <div class="work-top">
+              <span class="work-title">Project Alpha</span>
+              <span class="work-year">2026</span>
+            </div>
+            <p class="work-desc">
+              A clean, high-performance marketing site built for speed, clarity,
+              and conversion.
+            </p>
+            <div class="work-meta">
+              <span>Design</span>
+              <span>Build</span>
+              <span>Performance</span>
+            </div>
+          </a>
+
+          <a class="work-card" href="#" aria-label="View Project Meridian">
+            <div class="work-top">
+              <span class="work-title">Project Meridian</span>
+              <span class="work-year">2026</span>
+            </div>
+            <p class="work-desc">
+              Brand-forward web presence with a restrained system and strong
+              typographic hierarchy.
+            </p>
+            <div class="work-meta">
+              <span>Identity</span>
+              <span>UI</span>
+              <span>Front-end</span>
+            </div>
+          </a>
+
+          <a class="work-card" href="#" aria-label="View Project Ridge">
+            <div class="work-top">
+              <span class="work-title">Project Ridge</span>
+              <span class="work-year">2026</span>
+            </div>
+            <p class="work-desc">
+              A rebuild focused on maintainability, accessibility, and measurable
+              load-time gains.
+            </p>
+            <div class="work-meta">
+              <span>Refactor</span>
+              <span>A11y</span>
+              <span>SEO</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Core Qualities -->
+      <section id="deliverables" class="section">
+        <h2>Core Qualities</h2>
+
+        <div class="deliverables-grid">
+          <!-- Card 1: Banner image -->
+          <div class="deliver-card deliver-card--media" tabindex="0">
+            <div class="deliver-media">
+              <img src="./assets/images/fast.png" alt="" />
+            </div>
+
+            <div class="deliver-content">
+              <h3>Fast by Design</h3>
+              <p>
+                Performance is built in from the first line of code—speed,
+                stability, and responsiveness without excess.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Banner image -->
+<div class="deliver-card deliver-card--media" tabindex="0">
+  <div class="deliver-media">
+    <img src="./assets/images/structured.png" alt="" />
+  </div>
+
+  <div class="deliver-content">
+    <h3>Structured Aesthetics</h3>
+    <p>
+      Design treated as a system. Typography, spacing, and layout remain
+      consistent.
+    </p>
+  </div>
+</div>
+
+
+<!-- Card 3: Committed (image) -->
+<div class="deliver-card deliver-card--media" tabindex="0">
+  <div class="deliver-media">
+    <img src="./assets/images/quality.png" alt="" />
+  </div>
+
+  <div class="deliver-content">
+    <h3>Committed to Quality</h3>
+    <p>
+      Standards and care guide every decision—work that’s accessible,
+      maintainable, and responsibly executed.
+    </p>
+  </div>
+</div>
+
+
+      <!-- About (short) -->
+      <section id="about" class="section">
+        <h2>About</h2>
+        <p class="muted">
+          Baseline Studio builds modern websites—fast, structured, and committed
+          to quality.
+        </p>
+        <a class="about-more" href="./about.html">More</a>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p class="muted">
+          Email:
+          <a class="inline-link" href="mailto:ben@baselinestudiodesign.com">
+            ben@baselinestudiodesign.com
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Baseline Studio</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

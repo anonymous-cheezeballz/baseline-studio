@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About — Baseline Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="About Baseline Studio — high-quality websites that balance aesthetics with function."
+    />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="logo" href="./index.html#main" aria-label="Baseline Studio home">
+        Baseline Studio
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="./index.html#work">Work</a>
+        <a href="./index.html#deliverables">Core Qualities</a>
+        <a href="./about.html" aria-current="page">About</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <h1 class="page-title">About Baseline Studio</h1>
+
+        <div class="about-layout">
+          <!-- Left: Copy -->
+          <div class="about-text">
+            <p>
+              Baseline Studio was born out of a simple observation. Many of the
+              best small businesses we encountered had little to no online
+              presence, or one that failed to reflect the care and quality of
+              their work. If you didn’t happen to drive by or hear about them
+              through word of mouth, you’d never know they existed—resulting in
+              missed opportunities and overlooked experiences.
+            </p>
+
+            <p>
+              We decided to do something about it. With backgrounds in graphic
+              design and finance, we set out to bridge that gap. Our work goes
+              beyond building websites—we help business owners give shape to
+              their vision through design that’s thoughtful, functional, and
+              visually compelling.
+            </p>
+
+            <p class="about-thesis">
+              Baseline Studio designs and builds high-quality websites that
+              balance aesthetics with function.
+            </p>
+
+            <a class="cta" href="./index.html#contact">Start a project</a>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="about-image">
+            <img
+  src="./assets/images/about.jpg"
+  alt="Baseline Studio founders"
+  loading="lazy"
+/>
+
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Baseline Studio</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
