@@ -23,3 +23,7 @@ After each task, list:
 - Files changed
 - What changed
 - How to test
+## Additional allowed scope (Baseline Studio)
+- Allowed: implement interactive expand/collapse behavior for the "Core Qualities" cards on index.html.
+- Allowed files: index.html, the CSS file linked by index.html (style.css or styles.css), and script.js (only if necessary).
+- Constraints: minimal changes, no redesign, do not remove images, do not change other sections.
