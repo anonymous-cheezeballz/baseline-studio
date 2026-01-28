@@ -1,11 +1,25 @@
 # Baseline Studio — Codex Rules
 
 ## Scope
-- ONLY work on the Start Project page.
-- Allowed files:
-  - start-project.html
-  - style.css OR a new start-project.css
-  - minimal nav edit in index.html (link only)
+Default: ONLY work on the Start Project page.
+
+Allowed files (default):
+- start-project.html
+- style.css OR a new start-project.css
+- minimal nav edit in index.html (link only)
+
+Exception (explicitly allowed):
+- You MAY implement interactive expand/collapse behavior for the "Core Qualities" cards on index.html.
+- For this exception, allowed files are:
+  - index.html (Core Qualities section only)
+  - the CSS file linked by index.html (style.css or styles.css)
+  - script.js (only if necessary)
+- Constraints for this exception:
+  - minimal changes
+  - no redesign
+  - do not remove images
+  - do not change other sections
+
 
 ## Do NOT
 - Do not redesign existing pages.
