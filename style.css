@@ -57,6 +57,7 @@ body {
       transparent 60%
     ),
     var(--bg);
+  background-attachment: fixed, fixed, fixed;
   color: var(--text);
   line-height: 1.5;
 
@@ -513,7 +514,7 @@ ol {
 /* ✅ Safe fallback: if image fails to load, it won’t leave an awkward blank */
 .about-image img {
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   height: auto;
   border-radius: 18px;
   border: 1px solid var(--stroke);
@@ -542,11 +543,17 @@ ol {
 .about-thesis {
   color: var(--text);
   margin-top: 6px;
+  margin-bottom: 28px;
 }
 
 .about-image {
   display: flex;
   justify-content: center;
+}
+
+body:has(.about-layout) .site-footer {
+  border-top: none;
+  background: transparent;
 }
 
 /* Mobile */
@@ -587,6 +594,15 @@ ol {
 }
 
 /* Contact */
+#contact.section {
+  border-bottom: none;
+  box-shadow: none;
+}
+
+#contact.section::before,
+#contact.section::after {
+  content: none;
+}
 
 .contact-grid {
   display: grid;
@@ -661,9 +677,18 @@ textarea:focus {
 /* Footer */
 
 .site-footer {
-  border-top: 1px solid var(--stroke);
-  padding: 26px 0;
-  background: rgba(0, 0, 0, 0.2);
+  border: 0;
+  padding: 18px 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 12px;
+  color: var(--muted-2);
+  font-weight: 400;
+}
+
+.site-footer::before,
+.site-footer::after {
+  content: none;
 }
 
 .footer-inner {
@@ -957,3 +982,71 @@ textarea:focus {
 .sp-note{color:var(--muted-2);}
 .sp-note a{color:var(--text);text-decoration:underline;}
 @media (max-width:780px){.sp-hero{padding:48px 0 36px;}.sp-form__grid{grid-template-columns:1fr;}.sp-form__footer{flex-direction:column;align-items:flex-start;}}
+/* =========================
+   FOOTER: FINAL HARD LOCK
+   (Put this at the very end of style.css)
+   ========================= */
+
+/* Kill any separator that could be coming from the last section */
+main > .section:last-of-type,
+main > .section:last-of-type::before,
+main > .section:last-of-type::after {
+  border: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* Footer must be static + text-only (no divider/panel effects) */
+.site-footer,
+.site-footer::before,
+.site-footer::after {
+  border: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  background: var(--bg) !important; /* stops “animated” gradient feel */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  content: none !important;
+}
+
+.site-footer p {
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: var(--muted-2) !important;
+  font-weight: 400 !important;
+}
+/* =========================
+   FOOTER: FINAL HARD LOCK
+   (Put this at the very end of style.css)
+   ========================= */
+
+/* Kill any separator that could be coming from the last section */
+main > .section:last-of-type,
+main > .section:last-of-type::before,
+main > .section:last-of-type::after {
+  border: 0 !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  content: none !important;
+}
+
+/* Footer must be static + text-only (no divider/panel effects) */
+.site-footer,
+.site-footer::before,
+.site-footer::after {
+  border: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+  background: var(--bg) !important; /* stops “animated” gradient feel */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  content: none !important;
+}
+
+.site-footer p {
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: var(--muted-2) !important;
+  font-weight: 400 !important;
+}
