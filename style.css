@@ -28,6 +28,7 @@
 html,
 body {
   height: 100%;
+  min-height: 100%;
 }
 
 html {
@@ -44,6 +45,8 @@ html {
 
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
     sans-serif;
   background: radial-gradient(
@@ -63,6 +66,10 @@ body {
 
   /* Required: keep content from sliding under fixed header */
   padding-top: var(--header-h);
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -551,10 +558,6 @@ ol {
   justify-content: center;
 }
 
-body:has(.about-layout) .site-footer {
-  border-top: none;
-  background: transparent;
-}
 
 /* Mobile */
 @media (max-width: 960px) {
@@ -675,21 +678,6 @@ textarea:focus {
 }
 
 /* Footer */
-
-.site-footer {
-  border: 0;
-  padding: 18px 0;
-  background: transparent;
-  box-shadow: none;
-  font-size: 12px;
-  color: var(--muted-2);
-  font-weight: 400;
-}
-
-.site-footer::before,
-.site-footer::after {
-  content: none;
-}
 
 .footer-inner {
   display: flex;
@@ -979,21 +967,28 @@ textarea:focus {
 .sp-note{color:var(--muted-2);}
 .sp-note a{color:var(--text);text-decoration:underline;}
 @media (max-width:780px){.sp-hero{padding:48px 0 36px;}.sp-form__grid{grid-template-columns:1fr;}.sp-form__footer{flex-direction:column;align-items:flex-start;}}
-/* Footer: final hard lock */
-.site-footer,
-.site-footer::before,
-.site-footer::after {
-  border: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  content: none !important;
+/* =========================
+   FOOTER — CANONICAL
+   ========================= */
+
+.site-footer {
+  padding: 18px 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .site-footer p {
-  margin: 0 !important;
-  font-size: 12px !important;
-  color: var(--muted-2) !important;
-  font-weight: 400 !important;
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted-2);
+  font-weight: 400;
+}
+
+/* absolutely no motion */
+.site-footer,
+.site-footer * {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
 }
