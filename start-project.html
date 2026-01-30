@@ -4,163 +4,165 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start a Project — Baseline Studio</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Start a project with Baseline Studio — request a quote for a clean, engineered website."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <header class="site-header">
-  <a class="logo" href="./index.html" aria-label="Baseline Studio home">
-    Baseline Studio
-  </a>
-
-  <nav class="nav" aria-label="Primary">
-    <a href="./index.html#work">Work</a>
-    <a href="./index.html#deliverables">Core Qualities</a>
-    <a href="./about.html">About</a>
-    <a href="./index.html#contact">Contact</a>
-  </nav>
-</header>
 
   <body>
-    <!-- Start Project Hero -->
-    <section class="sp-hero" aria-labelledby="sp-hero-title">
-      <div class="sp-hero__inner">
-        <p class="sp-hero__eyebrow">Start a project</p>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <h1 id="sp-hero-title" class="sp-hero__title">
-          A clean, engineered website—built to ship.
-        </h1>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Baseline Studio home">
+          <span class="brand-mark">Baseline</span>
+          <span class="brand-sub">Studio</span>
+        </a>
 
-        <p class="sp-hero__sub">
-          Tell me what you’re building. I’ll respond with a clear plan, timeline,
-          and a straightforward quote—no fluff, no runaround.
-        </p>
-
-        <div class="sp-hero__actions">
-          <a class="sp-hero__btn sp-hero__btn--primary" href="#start-project-form">
-            Request a quote
-          </a>
-          <a class="sp-hero__btn sp-hero__btn--ghost" href="index.html">
-            View work
-          </a>
-        </div>
-
-        <div class="sp-hero__meta" role="list" aria-label="What you’ll get">
-          <div class="sp-hero__metaItem" role="listitem">
-            <span class="sp-hero__metaLabel">Response</span>
-            <span class="sp-hero__metaValue">Within 24 hours</span>
-          </div>
-          <div class="sp-hero__metaItem" role="listitem">
-            <span class="sp-hero__metaLabel">Deliverables</span>
-            <span class="sp-hero__metaValue">Design + build</span>
-          </div>
-          <div class="sp-hero__metaItem" role="listitem">
-            <span class="sp-hero__metaLabel">Focus</span>
-            <span class="sp-hero__metaValue">Performance + polish</span>
-          </div>
-        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html#work">Work</a>
+          <a class="nav-link" href="./index.html#deliverables">Core Qualities</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./index.html#contact">Contact</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- Start Project Form -->
-    <section class="sp-form" id="start-project-form" aria-labelledby="sp-form-title">
-      <div class="sp-form__inner">
-        <header class="sp-form__header">
-          <h2 id="sp-form-title" class="sp-form__title">Request a quote</h2>
-          <p class="sp-form__lead">
-            Share a few details and I’ll get back to you with a clear plan,
-            timeline, and quote.
+    <main id="main">
+      <!-- Start Project Hero -->
+      <section class="sp-hero" aria-labelledby="sp-hero-title">
+        <div class="sp-hero__inner container">
+          <p class="sp-hero__eyebrow">Start a project</p>
+
+          <h1 id="sp-hero-title" class="sp-hero__title">
+            A clean website, built to ship.
+          </h1>
+
+          <p class="sp-hero__sub">
+            Share what you need. I’ll reply with a clear plan and a fixed quote
+            within 24 hours.
           </p>
-        </header>
 
-        <form
-          class="sp-form__card"
-          action="https://formspree.io/f/abcdwxyz"
-          method="POST"
-        >
-          <input type="hidden" name="_redirect" value="thanks.html" />
-          <input
-            type="text"
-            name="_gotcha"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off"
-          />
+          <p class="sp-hero__proof">
+            You’ll get a short scope, timeline, and price. If it’s a fit, we’ll
+            book a quick call and start.
+          </p>
+        </div>
+      </section>
 
-          <div class="sp-form__grid">
-            <div class="sp-field">
-              <label class="sp-label" for="sp-name">Name</label>
-              <input
-                class="sp-input"
-                id="sp-name"
-                name="name"
-                type="text"
-                required
-                placeholder="Your name"
-                autocomplete="name"
-              />
-            </div>
-
-            <div class="sp-field">
-              <label class="sp-label" for="sp-email">Email</label>
-              <input
-                class="sp-input"
-                id="sp-email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@company.com"
-                autocomplete="email"
-                inputmode="email"
-              />
-            </div>
-
-            <div class="sp-field">
-              <label class="sp-label" for="sp-type">Project type</label>
-              <select class="sp-select" id="sp-type" name="project_type" required>
-                <option value="" disabled selected>Select one</option>
-                <option>Marketing website</option>
-                <option>Landing page</option>
-                <option>Web app</option>
-                <option>Redesign / rebuild</option>
-                <option>Maintenance</option>
-              </select>
-            </div>
-
-            <div class="sp-field">
-              <label class="sp-label" for="sp-budget">Budget range</label>
-              <select class="sp-select" id="sp-budget" name="budget" required>
-                <option value="" disabled selected>Select one</option>
-                <option>Under $2k</option>
-                <option>$2k–$5k</option>
-                <option>$5k–$10k</option>
-                <option>$10k+</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-
-            <div class="sp-field sp-field--full">
-              <label class="sp-label" for="sp-message">Project details</label>
-              <textarea
-                class="sp-textarea"
-                id="sp-message"
-                name="message"
-                rows="6"
-                required
-                placeholder="What are you building? Goals, pages, examples, constraints…"
-              ></textarea>
-            </div>
-          </div>
-
-          <div class="sp-form__footer">
-            <button class="sp-submit" type="submit">Send request</button>
-            <p class="sp-note">
-              Prefer email?
-              <a href="mailto:ben@baselinestudiodesign.com">
-                ben@baselinestudiodesign.com
-              </a>
+      <!-- Start Project Form -->
+      <section
+        class="sp-form"
+        id="start-project-form"
+        aria-labelledby="sp-form-title"
+      >
+        <div class="sp-form__inner container">
+          <header class="sp-form__header">
+            <h2 id="sp-form-title" class="sp-form__title">Request a quote</h2>
+            <p class="sp-form__lead">
+              A few details is plenty. I’ll follow up with next steps and
+              pricing.
             </p>
-          </div>
-        </form>
-      </div>
-    </section>
+          </header>
+
+          <form
+            class="sp-form__card"
+            action="https://formspree.io/f/abcdwxyz"
+            method="POST"
+          >
+            <input type="hidden" name="_redirect" value="thanks.html" />
+            <input
+              type="text"
+              name="_gotcha"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <div class="sp-form__grid">
+              <div class="sp-field">
+                <label class="sp-label" for="sp-name">Name</label>
+                <input
+                  class="sp-input"
+                  id="sp-name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="sp-field">
+                <label class="sp-label" for="sp-email">Email</label>
+                <input
+                  class="sp-input"
+                  id="sp-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@company.com"
+                  autocomplete="email"
+                  inputmode="email"
+                />
+              </div>
+
+              <div class="sp-field">
+                <label class="sp-label" for="sp-type">Project type</label>
+                <select
+                  class="sp-select"
+                  id="sp-type"
+                  name="project_type"
+                  required
+                >
+                  <option value="" disabled selected>Select one</option>
+                  <option>Marketing website</option>
+                  <option>Landing page</option>
+                  <option>Web app</option>
+                  <option>Redesign / rebuild</option>
+                  <option>Maintenance</option>
+                </select>
+              </div>
+
+              <div class="sp-field">
+                <label class="sp-label" for="sp-budget">Budget range</label>
+                <select class="sp-select" id="sp-budget" name="budget" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Under $2k</option>
+                  <option>$2k–$5k</option>
+                  <option>$5k–$10k</option>
+                  <option>$10k+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="sp-field sp-field--full">
+                <label class="sp-label" for="sp-message">Project details</label>
+                <textarea
+                  class="sp-textarea"
+                  id="sp-message"
+                  name="message"
+                  rows="6"
+                  required
+                  placeholder="Goals, pages needed, examples you like, deadline (if any)."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="sp-form__footer">
+              <button class="sp-submit" type="submit">Send request</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
