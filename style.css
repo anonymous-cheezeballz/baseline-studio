@@ -946,9 +946,6 @@ textarea:focus {
 .hero-grid {
   grid-template-columns: 1fr !important;
 }
-/* EMERGENCY: remove the hero-card UI mock everywhere */
-.hero-card { display: none !important; }
-.hero-grid { grid-template-columns: 1fr !important; }
 
 /* Start Project page (sp-*) */
 .sp-hero{padding:64px 0 48px;}
@@ -982,63 +979,13 @@ textarea:focus {
 .sp-note{color:var(--muted-2);}
 .sp-note a{color:var(--text);text-decoration:underline;}
 @media (max-width:780px){.sp-hero{padding:48px 0 36px;}.sp-form__grid{grid-template-columns:1fr;}.sp-form__footer{flex-direction:column;align-items:flex-start;}}
-/* =========================
-   FOOTER: FINAL HARD LOCK
-   (Put this at the very end of style.css)
-   ========================= */
-
-/* Kill any separator that could be coming from the last section */
-main > .section:last-of-type,
-main > .section:last-of-type::before,
-main > .section:last-of-type::after {
-  border: 0 !important;
-  box-shadow: none !important;
-  background-image: none !important;
-  content: none !important;
-}
-
-/* Footer must be static + text-only (no divider/panel effects) */
+/* Footer: final hard lock */
 .site-footer,
 .site-footer::before,
 .site-footer::after {
   border: 0 !important;
-  border-top: 0 !important;
   box-shadow: none !important;
-  background: var(--bg) !important; /* stops “animated” gradient feel */
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  content: none !important;
-}
-
-.site-footer p {
-  margin: 0 !important;
-  font-size: 12px !important;
-  color: var(--muted-2) !important;
-  font-weight: 400 !important;
-}
-/* =========================
-   FOOTER: FINAL HARD LOCK
-   (Put this at the very end of style.css)
-   ========================= */
-
-/* Kill any separator that could be coming from the last section */
-main > .section:last-of-type,
-main > .section:last-of-type::before,
-main > .section:last-of-type::after {
-  border: 0 !important;
-  box-shadow: none !important;
-  background-image: none !important;
-  content: none !important;
-}
-
-/* Footer must be static + text-only (no divider/panel effects) */
-.site-footer,
-.site-footer::before,
-.site-footer::after {
-  border: 0 !important;
-  border-top: 0 !important;
-  box-shadow: none !important;
-  background: var(--bg) !important; /* stops “animated” gradient feel */
+  background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   content: none !important;
