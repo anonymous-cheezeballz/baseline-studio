@@ -3,6 +3,47 @@
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+// Subtle engineered hero scroll-driven glide (respect reduced motion)
+const hero = document.querySelector(".hero--engineered");
+const heroImg = hero ? hero.querySelector(".hero-media img") : null;
+if (hero && heroImg) {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const maxDrift = 16;
+  const scaleStart = 1.03;
+  const scaleEnd = 1.02;
+  let ticking = false;
+
+  function updateHeroMotion() {
+    ticking = false;
+    if (prefersReduced.matches) return;
+
+    const rect = hero.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const inView = rect.bottom > 0 && rect.top < vh;
+    if (!inView) return;
+
+    const raw = (vh - rect.top) / (rect.height + vh);
+    const progress = Math.min(1, Math.max(0, raw));
+    const y = maxDrift * progress;
+    const scale = scaleStart + (scaleEnd - scaleStart) * progress;
+
+    hero.style.setProperty("--hero-media-y", `${y.toFixed(2)}px`);
+    hero.style.setProperty("--hero-media-scale", scale.toFixed(4));
+  }
+
+  function onScrollOrResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateHeroMotion);
+    }
+  }
+
+  window.addEventListener("scroll", onScrollOrResize, { passive: true });
+  window.addEventListener("resize", onScrollOrResize);
+  prefersReduced.addEventListener?.("change", onScrollOrResize);
+  updateHeroMotion();
+}
+
 // Mobile nav toggle
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("site-nav");
@@ -126,4 +167,5 @@ if (form) {
 
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
   });
-}
+}console.log("Hero motion script running ✅");
+/* HERO MOTION TEMP DISABLED */

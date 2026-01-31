@@ -249,6 +249,38 @@ ol {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero--engineered .hero-media img {
+    transform: scale(1.02);
+    will-change: auto;
+  }
+}
+
+.hero--engineered {
+  --hero-media-y: 0px;
+  --hero-media-scale: 1.02;
+}
+
+
+.hero--engineered .hero-media img {
+  transform: translate3d(0, var(--hero-media-y), 0) scale(var(--hero-media-scale));
+  will-change: transform;
+}
+
+/* Secondary hero spacing (restore original vertical rhythm) */
+.home-hero {
+  padding: clamp(96px, 14vh, 160px) 0;
+}
+
+.home-hero .hero-title {
+  margin-bottom: 24px;
+}
+
+.home-hero .hero-lede {
+  margin-bottom: 32px;
+}
+
+
 .brand {
   display: inline-flex;
   align-items: baseline;
@@ -1096,3 +1128,13 @@ textarea:focus {
   animation: none !important;
   transform: none !important;
 }
+/* Secondary hero uses the original hero styling */
+.home-hero {
+  /* if your old .hero had padding/spacing, copy it here */
+}
+
+.home-hero-title { /* copy rules from .hero-title (old) if needed */ }
+.home-hero-lede { /* copy rules from .hero-lede (old) if needed */ }
+.home-hero-actions { /* copy rules from .hero-actions (old) if needed */ }
+
+
