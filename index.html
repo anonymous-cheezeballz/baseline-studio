@@ -27,6 +27,12 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
+
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
           <span class="brand-mark">Baseline</span>
@@ -43,25 +49,23 @@
     </header>
 
     <!-- Primary Hero (Engineered) -->
-    <section class="hero hero--engineered" aria-label="Baseline Studio hero">
-      <div class="hero-media" aria-hidden="true">
-        <img
-          src="assets/hero/engineered-hero.webp"
-          alt=""
-          loading="eager"
-          decoding="async"
-        />
-      </div>
+<section class="hero hero--engineered">
+  <div class="hero-media">
+    <img src="./assets/hero/engineered-hero.webp" alt="" />
+  </div>
+  
+  <div class="hero-content reveal">
+    <h1 class="hero-title">Baseline Studio</h1>
+    <p class="hero-subtitle">Your digital foundation for timeless design.</p>
+  </div>
+</section>
 
-      <div class="hero-content">
-        <h1 class="hero-title">Baseline Studio</h1>
-        <p class="hero-subtitle">Precision-built web design &amp; development.</p>
-      </div>
-    </section>
+
+  
 
     <main id="main">
       <!-- Secondary hero / intro -->
-<section class="home-hero">
+<section class="home-hero reveal">
   <div class="container">
     <h1 class="hero-title">
       Timeless design.<br />
@@ -231,21 +235,42 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>Contact</h2>
-          </div>
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p>Send a quick note and we’ll get back to you.</p>
+    </div>
 
-          <p class="muted">
-            Email:
-            <a href="mailto:ben@baselinestudiodesign.com">
-              ben@baselinestudiodesign.com
-            </a>
-          </p>
-        </div>
-      </section>
-    </main>
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+        <p class="field-help" data-error-for="name"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+        <p class="field-help" data-error-for="email"></p>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <p class="field-help" data-error-for="message"></p>
+      </div>
+
+      <!-- Honeypot (spam trap) -->
+      <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;" />
+
+      <button class="btn btn-primary" type="submit">Send</button>
+
+      <p id="contact-status" class="form-note muted" style="margin-top:12px;"></p>
+    </form>
+  </div>
+</section>
+
 
     <footer class="site-footer">
       <div class="container">
