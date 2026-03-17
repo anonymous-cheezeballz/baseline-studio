@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selected Work — Baseline Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Selected work from Baseline Studio — recent design and development projects."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Baseline Studio home">
+          <span class="brand-mark">Baseline</span>
+          <span class="brand-sub">Studio</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html#work">Work</a>
+          <a class="nav-link is-active" href="./portfolio.html" aria-current="page"
+            >Portfolio</a
+          >
+          <a class="nav-link" href="./index.html#deliverables">Core Qualities</a>
+          <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link" href="./index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section portfolio-hero">
+        <div class="container">
+          <!-- Replace this heading and intro as needed -->
+          <div class="section-head portfolio-hero__head">
+            <p class="kicker">Portfolio</p>
+            <h1 class="page-title">Selected Work</h1>
+            <p>A look at recent design and development work.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <!-- Duplicate this carousel block to add another project later -->
+          <article class="portfolio-project">
+            <section
+              class="portfolio-carousel"
+              data-carousel
+              aria-label="Nole Protein screenshots carousel"
+            >
+              <div class="portfolio-carousel__viewport">
+                <button
+                  class="portfolio-carousel__arrow portfolio-carousel__arrow--prev"
+                  type="button"
+                  data-prev
+                  aria-label="Previous screenshot"
+                >
+                  <span aria-hidden="true">&#8592;</span>
+                </button>
+
+                <figure class="portfolio-slide is-active" data-slide>
+                  <img
+                    src="./assets/images/nole-homepage.png"
+                    alt="Nole Protein homepage desktop design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="portfolio-slide" data-slide>
+                  <img
+                    src="./assets/images/nole-about.png"
+                    alt="Nole Protein about page desktop design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="portfolio-slide" data-slide>
+                  <img
+                    src="./assets/images/nole-contact.png"
+                    alt="Nole Protein contact page desktop design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="portfolio-slide" data-slide>
+                  <img
+                    src="./assets/images/nole-homepage-mobile.png"
+                    alt="Nole Protein homepage mobile design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="portfolio-slide" data-slide>
+                  <img
+                    src="./assets/images/nole-about-mobile.png"
+                    alt="Nole Protein about page mobile design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="portfolio-slide" data-slide>
+                  <img
+                    src="./assets/images/nole-contact-mobile.png"
+                    alt="Nole Protein contact page mobile design"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <button
+                  class="portfolio-carousel__arrow portfolio-carousel__arrow--next"
+                  type="button"
+                  data-next
+                  aria-label="Next screenshot"
+                >
+                  <span aria-hidden="true">&#8594;</span>
+                </button>
+              </div>
+
+              <div
+                class="portfolio-carousel__dots"
+                role="tablist"
+                aria-label="Screenshot navigation"
+              >
+                <button
+                  class="portfolio-dot is-active"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 1"
+                ></button>
+                <button
+                  class="portfolio-dot"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 2"
+                ></button>
+                <button
+                  class="portfolio-dot"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 3"
+                ></button>
+                <button
+                  class="portfolio-dot"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 4"
+                ></button>
+                <button
+                  class="portfolio-dot"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 5"
+                ></button>
+                <button
+                  class="portfolio-dot"
+                  type="button"
+                  data-dot
+                  aria-label="Show screenshot 6"
+                ></button>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© Baseline Studio 2026</p>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
+        const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
+        const prev = carousel.querySelector("[data-prev]");
+        const next = carousel.querySelector("[data-next]");
+        let currentIndex = 0;
+
+        function render(index) {
+          currentIndex = index;
+
+          slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === currentIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+          });
+
+          dots.forEach((dot, dotIndex) => {
+            const isActive = dotIndex === currentIndex;
+            dot.classList.toggle("is-active", isActive);
+            dot.setAttribute("aria-selected", String(isActive));
+            dot.setAttribute("tabindex", isActive ? "0" : "-1");
+          });
+        }
+
+        prev?.addEventListener("click", () => {
+          render((currentIndex - 1 + slides.length) % slides.length);
+        });
+
+        next?.addEventListener("click", () => {
+          render((currentIndex + 1) % slides.length);
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.addEventListener("click", () => render(dotIndex));
+        });
+
+        render(0);
+      });
+    </script>
+  </body>
+</html>
