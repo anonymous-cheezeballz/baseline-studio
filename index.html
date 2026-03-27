@@ -27,24 +27,24 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-</button>
-
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
-          <span class="brand-mark">Baseline</span>
-          <span class="brand-sub">Studio</span>
+          <img
+            src="./assets/images/baseline-studio-logo-blk.svg"
+            alt="Baseline Studio logo"
+          />
         </a>
 
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
         <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="./start-project.html#start-project-form">Start a Project</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
-          <a class="nav-link" href="#deliverables">Core Qualities</a>
           <a class="nav-link" href="./about.html">About</a>
-          <a class="nav-link" href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -56,8 +56,13 @@
   </div>
   
   <div class="hero-content reveal">
-    <h1 class="hero-title">Baseline Studio</h1>
-    <p class="hero-subtitle">Your digital foundation for timeless design.</p>
+    <div class="hero-copy">
+      <h1 class="hero-title hero-title--stacked" aria-label="Meet your Digital Foundation for timeless design.">
+        <span class="hero-title-line hero-title-line--top">Meet your</span>
+        <span class="hero-title-line hero-title-line--focus">Digital Foundation</span>
+        <span class="hero-title-line hero-title-line--bottom">for timeless design.</span>
+      </h1>
+    </div>
   </div>
 </section>
 
@@ -84,199 +89,52 @@
   </div>
 </section>
 
-
-      <!-- Work -->
-      <section id="work" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>Work</h2>
-            <p>Selected projects that prioritize clarity, performance, and craft.</p>
-          </div>
-
-          <div class="work-grid">
-            <a
-              class="work-card"
-              href="./portfolio.html"
-              aria-label="View the Nole Protein portfolio project"
-            >
-              <div class="work-top">
-                <span class="work-title">Nole Protein</span>
-                <span class="work-year">2026</span>
-              </div>
-              <p class="work-desc">
-                A launch-ready brand website built to feel modern, clean, and
-                culturally distinct.
-              </p>
-              <div class="work-meta">
-                <span>Design</span>
-                <span>Front-end</span>
-                <span>Launch</span>
-              </div>
-            </a>
-
-            <a class="work-card" href="#" aria-label="View Project Meridian">
-              <div class="work-top">
-                <span class="work-title">Project Meridian</span>
-                <span class="work-year">2026</span>
-              </div>
-              <p class="work-desc">
-                Brand-forward web presence with a restrained system and strong
-                typographic hierarchy.
-              </p>
-              <div class="work-meta">
-                <span>Identity</span>
-                <span>UI</span>
-                <span>Front-end</span>
-              </div>
-            </a>
-
-            <a class="work-card" href="#" aria-label="View Project Ridge">
-              <div class="work-top">
-                <span class="work-title">Project Ridge</span>
-                <span class="work-year">2026</span>
-              </div>
-              <p class="work-desc">
-                A rebuild focused on maintainability, accessibility, and measurable
-                load-time gains.
-              </p>
-              <div class="work-meta">
-                <span>Refactor</span>
-                <span>A11y</span>
-                <span>SEO</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Core Qualities -->
+      <!-- Portfolio -->
       <section id="deliverables" class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Core Qualities</h2>
-            <p>Engineering discipline applied to design and build.</p>
+            <h2>Portfolio</h2>
+            <p>A preview of recent work and what’s currently in progress.</p>
           </div>
 
           <div class="deliverables-grid">
-            <div class="deliver-card deliver-card--media">
+            <a class="deliver-card deliver-card--media deliver-card--link" href="./portfolio.html">
               <div class="deliver-summary">
                 <div class="deliver-media">
-                  <img class="deliver-img" src="./assets/images/fast.png" alt="" />
+                  <img class="deliver-img" src="./assets/images/nole-homepage.png" alt="Nole Protein website preview" />
+                  <span class="deliver-badge">Featured Project</span>
                 </div>
 
                 <div class="deliver-content">
-                  <h3>Fast by Design</h3>
-                  <p>
-                    Performance is built in from the first line of code—speed,
-                    stability, and responsiveness without excess.
+                  <h3>Nole Protein</h3>
+                  <p class="deliver-copy deliver-copy--muted">
+                    Nole is a startup based in Mexico City focused on redefining the protein powder industry by combining modern science with traditional pinole recipes.
                   </p>
+                  <span class="deliver-cta-wrap" aria-hidden="true">
+                    <span class="deliver-cta">View Project</span>
+                  </span>
                 </div>
               </div>
+            </a>
 
-              <p class="deliver-more">
-                Lean assets, careful structure, and measured motion keep load
-                times sharp without sacrificing craft.
-              </p>
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
             </div>
 
-            <div class="deliver-card deliver-card--media">
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
               <div class="deliver-summary">
-                <div class="deliver-media">
-                  <img class="deliver-img" src="./assets/images/structured.png" alt="" />
-                </div>
-
-                <div class="deliver-content">
-                  <h3>Structured Aesthetics</h3>
-                  <p>
-                    Design treated as a system. Typography, spacing, and layout
-                    remain consistent.
-                  </p>
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
                 </div>
               </div>
-
-              <p class="deliver-more">
-                A restrained system keeps decisions aligned, so the work feels
-                cohesive across every page.
-              </p>
-            </div>
-
-            <div class="deliver-card deliver-card--media">
-              <div class="deliver-summary">
-                <div class="deliver-media">
-                  <img class="deliver-img" src="./assets/images/quality.png" alt="" />
-                </div>
-
-                <div class="deliver-content">
-                  <h3>Committed to Quality</h3>
-                  <p>
-                    Standards and care guide every decision—work that’s accessible,
-                    maintainable, and responsibly executed.
-                  </p>
-                </div>
-              </div>
-
-              <p class="deliver-more">
-                The build is reviewed for clarity, durability, and accessibility
-                before it ships.
-              </p>
             </div>
           </div>
         </div>
       </section>
-
-      <!-- About (short) -->
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>About</h2>
-            <p>
-              Baseline Studio builds more than websites—we build connections. We
-              connect people with ideas, products, and services that matter.
-            </p>
-          </div>
-
-          <a class="btn btn-secondary" href="./about.html">More</a>
-        </div>
-      </section>
-
-      <!-- Contact -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <p>Send a quick note and we’ll get back to you.</p>
-    </div>
-
-    <form id="contact-form" class="contact-form" novalidate>
-      <div class="field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
-        <p class="field-help" data-error-for="name"></p>
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
-        <p class="field-help" data-error-for="email"></p>
-      </div>
-
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <p class="field-help" data-error-for="message"></p>
-      </div>
-
-      <!-- Honeypot (spam trap) -->
-      <input type="text" name="company" id="company" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0;" />
-
-      <button class="btn btn-primary" type="submit">Send</button>
-
-      <p id="contact-status" class="form-note muted" style="margin-top:12px;"></p>
-    </form>
-  </div>
-</section>
-
-
     <footer class="site-footer">
       <div class="container">
         <p>© Baseline Studio 2026</p>

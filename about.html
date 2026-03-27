@@ -33,18 +33,24 @@ Do not modify structure without intent
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
-          <span class="brand-mark">Baseline</span>
-          <span class="brand-sub">Studio</span>
+          <img
+            src="./assets/images/baseline-studio-logo-blk.svg"
+            alt="Baseline Studio logo"
+          />
         </a>
 
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
         <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="./index.html#work">Work</a>
+          <a class="nav-link" href="./start-project.html#start-project-form">Start a Project</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
-          <a class="nav-link" href="./index.html#deliverables">Core Qualities</a>
           <a class="nav-link is-active" href="./about.html" aria-current="page"
             >About</a
           >
-          <a class="nav-link" href="./index.html#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -72,6 +78,14 @@ Do not modify structure without intent
                 their vision through design that’s thoughtful, functional, and
                 visually compelling.
               </p>
+
+              <div class="about-image-mobile">
+                <img
+                  src="./assets/images/about.jpg"
+                  alt="Baseline Studio founders"
+                  loading="lazy"
+                />
+              </div>
 
               <p class="about-thesis">
                 Baseline Studio designs and builds high-quality websites that
@@ -107,5 +121,6 @@ Do not modify structure without intent
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script src="./script.js" defer></script>
   </body>
 </html>

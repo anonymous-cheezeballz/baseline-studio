@@ -20,163 +20,101 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body>
+  <body class="portfolio-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
-          <span class="brand-mark">Baseline</span>
-          <span class="brand-sub">Studio</span>
+          <img
+            src="./assets/images/baseline-studio-logo-blk.svg"
+            alt="Baseline Studio logo"
+          />
         </a>
 
-        <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="./index.html#work">Work</a>
-          <a class="nav-link is-active" href="./portfolio.html" aria-current="page"
-            >Portfolio</a
-          >
-          <a class="nav-link" href="./index.html#deliverables">Core Qualities</a>
-          <a class="nav-link" href="./about.html">About</a>
-          <a class="nav-link" href="./index.html#contact">Contact</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="site-nav portfolio-page-nav" aria-label="Primary">
+          <a class="nav-link nav-link--cta" href="./start-project.html#start-project-form">Start a Project</a>
+          <a class="nav-link nav-link--secondary is-active" href="./portfolio.html" aria-current="page">Portfolio</a>
+          <a class="nav-link nav-link--secondary" href="./about.html">About</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="section portfolio-hero">
+
+      <!-- Page header -->
+      <section class="work-header">
         <div class="container">
-          <!-- Replace this heading and intro as needed -->
-          <div class="section-head portfolio-hero__head">
-            <p class="kicker">Portfolio</p>
-            <h1 class="page-title">Selected Work</h1>
-            <p>A look at recent design and development work.</p>
+          <p class="kicker">Selected Work</p>
+          <h1 class="work-header__title">Built with intention.</h1>
+        </div>
+      </section>
+
+      <!-- Work grid -->
+      <section class="work-grid-section" aria-label="Portfolio projects">
+        <div class="container">
+          <div class="work-grid">
+
+            <!-- Row 1 -->
+            <a class="deliver-card deliver-card--media deliver-card--link deliver-card--image-only" href="./work/nole-protein.html">
+              <div class="deliver-summary">
+                <div class="deliver-media">
+                  <img class="deliver-img" src="./assets/images/nole-homepage.png" alt="Nole Protein website" />
+                </div>
+              </div>
+            </a>
+
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
+              <div class="deliver-summary">
+                <div class="deliver-media deliver-media--placeholder">
+                  <span class="deliver-badge">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <!-- Duplicate this carousel block to add another project later -->
-          <article class="portfolio-project">
-            <section
-              class="portfolio-carousel"
-              data-carousel
-              aria-label="Nole Protein screenshots carousel"
-            >
-              <div class="portfolio-carousel__viewport">
-                <button
-                  class="portfolio-carousel__arrow portfolio-carousel__arrow--prev"
-                  type="button"
-                  data-prev
-                  aria-label="Previous screenshot"
-                >
-                  <span aria-hidden="true">&#8592;</span>
-                </button>
-
-                <figure class="portfolio-slide is-active" data-slide>
-                  <img
-                    src="./assets/images/nole-homepage.png"
-                    alt="Nole Protein homepage desktop design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="portfolio-slide" data-slide>
-                  <img
-                    src="./assets/images/nole-about.png"
-                    alt="Nole Protein about page desktop design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="portfolio-slide" data-slide>
-                  <img
-                    src="./assets/images/nole-contact.png"
-                    alt="Nole Protein contact page desktop design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="portfolio-slide" data-slide>
-                  <img
-                    src="./assets/images/nole-homepage-mobile.png"
-                    alt="Nole Protein homepage mobile design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="portfolio-slide" data-slide>
-                  <img
-                    src="./assets/images/nole-about-mobile.png"
-                    alt="Nole Protein about page mobile design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <figure class="portfolio-slide" data-slide>
-                  <img
-                    src="./assets/images/nole-contact-mobile.png"
-                    alt="Nole Protein contact page mobile design"
-                    loading="lazy"
-                  />
-                </figure>
-
-                <button
-                  class="portfolio-carousel__arrow portfolio-carousel__arrow--next"
-                  type="button"
-                  data-next
-                  aria-label="Next screenshot"
-                >
-                  <span aria-hidden="true">&#8594;</span>
-                </button>
-              </div>
-
-              <div
-                class="portfolio-carousel__dots"
-                role="tablist"
-                aria-label="Screenshot navigation"
-              >
-                <button
-                  class="portfolio-dot is-active"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 1"
-                ></button>
-                <button
-                  class="portfolio-dot"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 2"
-                ></button>
-                <button
-                  class="portfolio-dot"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 3"
-                ></button>
-                <button
-                  class="portfolio-dot"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 4"
-                ></button>
-                <button
-                  class="portfolio-dot"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 5"
-                ></button>
-                <button
-                  class="portfolio-dot"
-                  type="button"
-                  data-dot
-                  aria-label="Show screenshot 6"
-                ></button>
-              </div>
-            </section>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -185,45 +123,6 @@
       </div>
     </footer>
 
-    <script>
-      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
-        const slides = Array.from(carousel.querySelectorAll("[data-slide]"));
-        const dots = Array.from(carousel.querySelectorAll("[data-dot]"));
-        const prev = carousel.querySelector("[data-prev]");
-        const next = carousel.querySelector("[data-next]");
-        let currentIndex = 0;
-
-        function render(index) {
-          currentIndex = index;
-
-          slides.forEach((slide, slideIndex) => {
-            const isActive = slideIndex === currentIndex;
-            slide.classList.toggle("is-active", isActive);
-            slide.setAttribute("aria-hidden", String(!isActive));
-          });
-
-          dots.forEach((dot, dotIndex) => {
-            const isActive = dotIndex === currentIndex;
-            dot.classList.toggle("is-active", isActive);
-            dot.setAttribute("aria-selected", String(isActive));
-            dot.setAttribute("tabindex", isActive ? "0" : "-1");
-          });
-        }
-
-        prev?.addEventListener("click", () => {
-          render((currentIndex - 1 + slides.length) % slides.length);
-        });
-
-        next?.addEventListener("click", () => {
-          render((currentIndex + 1) % slides.length);
-        });
-
-        dots.forEach((dot, dotIndex) => {
-          dot.addEventListener("click", () => render(dotIndex));
-        });
-
-        render(0);
-      });
-    </script>
+    <script src="./script.js" defer></script>
   </body>
 </html>

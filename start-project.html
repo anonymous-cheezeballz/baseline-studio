@@ -23,16 +23,22 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
-          <span class="brand-mark">Baseline</span>
-          <span class="brand-sub">Studio</span>
+          <img
+            src="./assets/images/baseline-studio-logo-blk.svg"
+            alt="Baseline Studio logo"
+          />
         </a>
 
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
         <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="./index.html#work">Work</a>
+          <a class="nav-link is-active" href="#start-project-form" aria-current="page">Start a Project</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
-          <a class="nav-link" href="./index.html#deliverables">Core Qualities</a>
           <a class="nav-link" href="./about.html">About</a>
-          <a class="nav-link" href="./index.html#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -59,8 +65,7 @@
           <header class="sp-form__header">
             <h2 id="sp-form-title" class="sp-form__title">Request a quote</h2>
             <p class="sp-form__lead">
-              A few details is plenty. I’ll follow up with next steps and
-              pricing.
+              Share a few details and we’ll follow up with next steps and pricing.
             </p>
           </header>
 
@@ -103,50 +108,34 @@
                 />
               </div>
 
-              <div class="sp-field">
-                <label class="sp-label" for="sp-type">Project type</label>
-                <select
-                  class="sp-select"
-                  id="sp-type"
-                  name="project_type"
+              <div class="sp-field sp-field--full">
+                <label class="sp-label" for="sp-business">Business name</label>
+                <input
+                  class="sp-input"
+                  id="sp-business"
+                  name="businessName"
+                  type="text"
                   required
-                >
-                  <option value="" disabled selected>Select one</option>
-                  <option>Marketing website</option>
-                  <option>Landing page</option>
-                  <option>Web app</option>
-                  <option>Redesign / rebuild</option>
-                  <option>Maintenance</option>
-                </select>
-              </div>
-
-              <div class="sp-field">
-                <label class="sp-label" for="sp-budget">Budget range</label>
-                <select class="sp-select" id="sp-budget" name="budget" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>Under $2k</option>
-                  <option>$2k–$5k</option>
-                  <option>$5k–$10k</option>
-                  <option>$10k+</option>
-                  <option>Not sure yet</option>
-                </select>
+                  placeholder="Your business or project name"
+                  autocomplete="organization"
+                />
               </div>
 
               <div class="sp-field sp-field--full">
-                <label class="sp-label" for="sp-message">Project details</label>
+                <label class="sp-label" for="sp-message">Brief project details</label>
                 <textarea
                   class="sp-textarea"
                   id="sp-message"
-                  name="message"
-                  rows="6"
+                  name="projectDetails"
+                  rows="5"
                   required
-                  placeholder="Goals, pages needed, examples you like, deadline (if any)."
+                  placeholder="Tell us a little about your business, what you need, and anything you already have in mind."
                 ></textarea>
               </div>
             </div>
 
             <div class="sp-form__footer">
-              <button class="sp-submit" type="submit">Send request</button>
+              <button class="sp-submit" type="submit">Request a quote</button>
             </div>
           </form>
         </div>
