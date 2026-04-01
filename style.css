@@ -321,6 +321,10 @@ ol {
 }
 
 @media (max-width: 640px) {
+  .hero-content {
+    --hero-content-offset: 10vh;
+  }
+
   .hero-copy {
     transform: none;
   }
