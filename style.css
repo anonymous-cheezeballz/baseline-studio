@@ -2149,3 +2149,101 @@ body {
     max-width: 260px;
   }
 }
+
+/* ==========================================================================
+   Hero Geo Redesign  ·  feature/raycast-inspired-hero
+   Additive only — does not modify or override existing shared styles
+   ========================================================================== */
+
+/* Section background when geometric SVG is active */
+.hero--geo {
+  background: #06060A;
+}
+
+/* Hide the original webp while geo variant is active */
+.hero-media--geo > img {
+  display: none;
+}
+
+/* The inline SVG fills the absolute hero-media container */
+.hero-geo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+/* ── Glow effects via CSS drop-shadow ─────────────────────────── */
+
+/* Main triangle — soft electric-blue rim glow */
+.hg-main-tri {
+  filter:
+    drop-shadow(0 0 20px rgba(47, 107, 255, 0.20))
+    drop-shadow(0 0  7px rgba(47, 107, 255, 0.38));
+}
+
+/* Concentric precision rings */
+.hg-ring {
+  filter: drop-shadow(0 0 4px rgba(47, 107, 255, 0.32));
+}
+
+/* Innermost ring — slightly brighter */
+.hg-innermost {
+  filter: drop-shadow(0 0 6px rgba(47, 107, 255, 0.52));
+}
+
+/* ── Animations ───────────────────────────────────────────────── */
+
+/* Atmospheric glow — slow breathing pulse */
+@keyframes hg-atm-pulse {
+  0%,  100% { opacity: 1;    }
+  50%        { opacity: 0.42; }
+}
+
+.hg-atmosphere {
+  animation: hg-atm-pulse 9s ease-in-out infinite;
+}
+
+/* Apex inner dot — scales around its own center */
+@keyframes hg-apex-breathe {
+  0%,  100% { transform: scale(1);   opacity: 1;    }
+  50%        { transform: scale(1.8); opacity: 0.55; }
+}
+
+.hg-apex-anim {
+  transform-box:    fill-box;
+  transform-origin: center;
+  animation: hg-apex-breathe 3.6s ease-in-out infinite;
+}
+
+/* Apex outer halo — subtle fade sync */
+@keyframes hg-apex-halo-pulse {
+  0%,  100% { opacity: 0.90; }
+  50%        { opacity: 1;    }
+}
+
+.hg-apex-halo {
+  animation: hg-apex-halo-pulse 3.6s ease-in-out infinite;
+}
+
+/* Accent streaks — periodic shimmer (staggered delay in HTML if needed) */
+@keyframes hg-streak-shimmer {
+  0%,  100% { opacity: 0.55; }
+  48%, 52%  { opacity: 1;    }
+}
+
+.hg-streak-accent {
+  animation: hg-streak-shimmer 5s ease-in-out infinite;
+}
+
+/* Reduced motion — disable all hero-geo animations */
+@media (prefers-reduced-motion: reduce) {
+  .hg-atmosphere,
+  .hg-apex-anim,
+  .hg-apex-halo,
+  .hg-streak-accent {
+    animation: none;
+  }
+}

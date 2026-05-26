@@ -50,9 +50,228 @@
     </header>
 
     <!-- Primary Hero (Engineered) -->
-<section class="hero hero--engineered">
-  <div class="hero-media">
-    <img src="./assets/hero/engineered-hero.webp" alt="" />
+<section class="hero hero--engineered hero--geo">
+  <div class="hero-media hero-media--geo">
+    <svg class="hero-geo"
+         viewBox="0 0 1440 760"
+         preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true"
+         focusable="false">
+      <defs>
+        <!-- Background fill -->
+        <linearGradient id="hg-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#07070A"/>
+          <stop offset="100%" stop-color="#0C0C10"/>
+        </linearGradient>
+
+        <!-- Metallic triangle fill — diagonal sheen top-left → bottom-right -->
+        <linearGradient id="hg-metal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"   stop-color="#1B2238"/>
+          <stop offset="35%"  stop-color="#0F1220"/>
+          <stop offset="65%"  stop-color="#0C0F1A"/>
+          <stop offset="100%" stop-color="#080B14"/>
+        </linearGradient>
+
+        <!-- Left-edge face highlight (apex → base-left) -->
+        <linearGradient id="hg-edge-l"
+                        x1="720" y1="108" x2="390" y2="680"
+                        gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#6699FF" stop-opacity="0.65"/>
+          <stop offset="40%"  stop-color="#2F6BFF" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#2F6BFF" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Right-edge face highlight (apex → base-right) -->
+        <linearGradient id="hg-edge-r"
+                        x1="720" y1="108" x2="1050" y2="680"
+                        gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#2F6BFF" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#2F6BFF" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Atmospheric radial glow centered on triangle body -->
+        <radialGradient id="hg-atm" cx="50%" cy="56%" r="52%">
+          <stop offset="0%"   stop-color="#2F6BFF" stop-opacity="0.11"/>
+          <stop offset="55%"  stop-color="#2F6BFF" stop-opacity="0.03"/>
+          <stop offset="100%" stop-color="#2F6BFF" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Diagonal streak gradient (horizontal — rotated by element transform) -->
+        <linearGradient id="hg-sk" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#2F6BFF" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#2F6BFF" stop-opacity="0.55"/>
+          <stop offset="55%"  stop-color="#99BBFF" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#2F6BFF" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Apex core glow -->
+        <radialGradient id="hg-apex-core" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="1"/>
+          <stop offset="28%"  stop-color="#AACCFF"  stop-opacity="0.95"/>
+          <stop offset="65%"  stop-color="#2F6BFF"  stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#2F6BFF"  stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Vignettes -->
+        <linearGradient id="hg-vgb" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#0A0A0B" stop-opacity="0"/>
+          <stop offset="82%"  stop-color="#0A0A0B" stop-opacity="0.72"/>
+          <stop offset="100%" stop-color="#0A0A0B" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient id="hg-vgl" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#0A0A0B" stop-opacity="0.88"/>
+          <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="hg-vgr" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#0A0A0B" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0.88"/>
+        </linearGradient>
+
+        <!-- Filters -->
+        <filter id="hg-blur-far"  x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="7"/>
+        </filter>
+        <filter id="hg-blur-mid"  x="-15%" y="-15%" width="130%" height="130%">
+          <feGaussianBlur stdDeviation="3"/>
+        </filter>
+        <filter id="hg-blur-near" x="-8%"  y="-8%"  width="116%" height="116%">
+          <feGaussianBlur stdDeviation="1.2"/>
+        </filter>
+        <!-- Streak blur — horizontal only for motion feel -->
+        <filter id="hg-skb" x="-80%" y="-600%" width="260%" height="1300%">
+          <feGaussianBlur stdDeviation="1.2 0"/>
+        </filter>
+        <!-- Apex outer halo -->
+        <filter id="hg-apex-halo" x="-300%" y="-300%" width="700%" height="700%">
+          <feGaussianBlur stdDeviation="20"/>
+        </filter>
+      </defs>
+
+      <!-- ░░ LAYER 1 — BACKGROUND ░░ -->
+      <rect width="1440" height="760" fill="url(#hg-bg)"/>
+
+      <!-- ░░ LAYER 2 — ATMOSPHERE ░░ -->
+      <ellipse class="hg-atmosphere"
+               cx="720" cy="420" rx="580" ry="355"
+               fill="url(#hg-atm)"/>
+
+      <!-- ░░ LAYER 3 — TRAILING ECHO TRIANGLES (far → near) ░░ -->
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(110,80)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="0.7" stroke-opacity="0.06"
+               filter="url(#hg-blur-far)"/>
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(88,64)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="0.8" stroke-opacity="0.09"
+               filter="url(#hg-blur-far)"/>
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(66,48)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="0.9" stroke-opacity="0.14"
+               filter="url(#hg-blur-mid)"/>
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(44,32)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="1.0" stroke-opacity="0.21"
+               filter="url(#hg-blur-mid)"/>
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(22,16)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="1.1" stroke-opacity="0.32"
+               filter="url(#hg-blur-near)"/>
+
+      <!-- ░░ LAYER 4 — MAIN METALLIC TRIANGLE ░░ -->
+      <polygon class="hg-main-tri"
+               points="720,108 1050,680 390,680"
+               fill="url(#hg-metal)"
+               stroke="#2F6BFF" stroke-width="1.2" stroke-opacity="0.78"/>
+
+      <!-- Face edge highlight lines -->
+      <line x1="720" y1="108" x2="390"  y2="680"
+            stroke="url(#hg-edge-l)" stroke-width="1.5"/>
+      <line x1="720" y1="108" x2="1050" y2="680"
+            stroke="url(#hg-edge-r)" stroke-width="1"/>
+
+      <!-- ░░ LAYER 5 — ADVANCE ECHO TRIANGLES (ahead of main) ░░ -->
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(-22,-16)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="0.9" stroke-opacity="0.13"
+               filter="url(#hg-blur-near)"/>
+      <polygon points="720,108 1050,680 390,680"
+               transform="translate(-44,-32)"
+               fill="none"
+               stroke="#2F6BFF" stroke-width="0.7" stroke-opacity="0.06"
+               filter="url(#hg-blur-mid)"/>
+
+      <!-- ░░ LAYER 6 — CONCENTRIC PRECISION RINGS ░░ -->
+      <!-- 52% scale (centroid 720,489) -->
+      <polygon class="hg-ring"
+               points="720,291 892,589 548,589"
+               fill="none" stroke="#2F6BFF" stroke-width="0.8" stroke-opacity="0.36"/>
+      <!-- 30% scale -->
+      <polygon class="hg-ring"
+               points="720,375 819,547 621,547"
+               fill="none" stroke="#2F6BFF" stroke-width="0.7" stroke-opacity="0.28"/>
+      <!-- 14% scale — innermost -->
+      <polygon class="hg-innermost"
+               points="720,436 766,516 674,516"
+               fill="none" stroke="#2F6BFF" stroke-width="0.6" stroke-opacity="0.50"/>
+
+      <!-- ░░ LAYER 7 — DIAGONAL LIGHT STREAKS ░░ -->
+      <rect x="480"  y="209"   width="320" height="1.5"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 640, 209.75)"
+            filter="url(#hg-skb)" opacity="0.55"/>
+      <rect x="575"  y="144"   width="290" height="1"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 720, 144.5)"
+            filter="url(#hg-skb)" opacity="0.50" class="hg-streak-accent"/>
+      <rect x="765"  y="318"   width="265" height="1.5"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 897, 318.75)"
+            filter="url(#hg-skb)" opacity="0.40"/>
+      <rect x="415"  y="478"   width="305" height="1.5"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 568, 478.75)"
+            filter="url(#hg-skb)" opacity="0.35"/>
+      <rect x="985"  y="390"   width="240" height="1"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 1105, 390.5)"
+            filter="url(#hg-skb)" opacity="0.28"/>
+      <!-- Long sweep through composition center -->
+      <rect x="370"  y="338"   width="480" height="2"
+            fill="url(#hg-sk)"
+            transform="rotate(-28, 610, 339)"
+            filter="url(#hg-skb)" opacity="0.22" class="hg-streak-accent"/>
+
+      <!-- ░░ LAYER 8 — APEX GLOW NODE ░░ -->
+      <!-- Outer diffuse halo -->
+      <circle cx="720" cy="108" r="30"
+              fill="url(#hg-apex-core)"
+              filter="url(#hg-apex-halo)"
+              class="hg-apex-halo" opacity="0.9"/>
+      <!-- Precision ring -->
+      <circle cx="720" cy="108" r="9"
+              fill="none"
+              stroke="#2F6BFF" stroke-width="1"
+              stroke-opacity="0.65"/>
+      <!-- Bright inner dot (animated) -->
+      <circle cx="720" cy="108" r="3.5"
+              fill="url(#hg-apex-core)"
+              class="hg-apex-anim"/>
+
+      <!-- ░░ LAYER 9 — VIGNETTES ░░ -->
+      <!-- Bottom fade (text legibility) -->
+      <rect width="1440" height="760" fill="url(#hg-vgb)"/>
+      <!-- Left side -->
+      <rect x="0"    y="0" width="280" height="760" fill="url(#hg-vgl)"/>
+      <!-- Right side -->
+      <rect x="1160" y="0" width="280" height="760" fill="url(#hg-vgr)"/>
+    </svg>
   </div>
   
   <div class="hero-content reveal">
