@@ -4,9 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thanks — Baseline Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="baseline-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Baseline Studio home">
+          <img
+            src="./assets/images/baseline-studio-logo-blk.svg"
+            alt="Baseline Studio logo"
+          />
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link nav-link--cta" href="./start-project.html#start-project-form">Start a Project</a>
+          <a class="nav-link" href="./portfolio.html">Portfolio</a>
+          <a class="nav-link" href="./about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
     <section class="sp-hero">
       <div class="sp-hero__inner">
         <p class="sp-hero__eyebrow">Request received</p>
@@ -50,6 +82,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <footer class="site-footer">
       <div class="container">

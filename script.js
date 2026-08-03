@@ -25,6 +25,109 @@ if (document.readyState === "loading") {
 // 🔑 ADD THIS LINE
 window.addEventListener("load", runHeroReveal);
 
+function initHomepageSplineEntrance() {
+  const orb = document.querySelector(".hp-hero__orb");
+  const viewer = orb ? orb.querySelector("spline-viewer") : null;
+  if (!orb || !viewer) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let revealed = false;
+  let fallbackTimer = null;
+  let loadedStateTimer = null;
+
+  function revealOrb(source) {
+    if (revealed) return;
+    revealed = true;
+    if (fallbackTimer) window.clearTimeout(fallbackTimer);
+    if (loadedStateTimer) window.clearInterval(loadedStateTimer);
+    orb.dataset.splineEntrance = source;
+    orb.classList.add("is-spline-loaded");
+  }
+
+  if (prefersReduced.matches) {
+    revealOrb("reduced-motion");
+    return;
+  }
+
+  function onSplineLoaded(event) {
+    requestAnimationFrame(() => revealOrb(event.type));
+  }
+
+  viewer.addEventListener("load", onSplineLoaded, { once: true });
+  viewer.addEventListener("load-complete", onSplineLoaded, { once: true });
+
+  customElements.whenDefined("spline-viewer").then(() => {
+    if (viewer._loaded) revealOrb("loaded-state");
+  });
+
+  loadedStateTimer = window.setInterval(() => {
+    if (viewer._loaded) revealOrb("loaded-state");
+  }, 250);
+
+  fallbackTimer = window.setTimeout(() => revealOrb("fallback"), 6500);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initHomepageSplineEntrance);
+} else {
+  initHomepageSplineEntrance();
+}
+
+function initMobileSplineCanvasBlend() {
+  const viewer = document.querySelector(".hp-hero__orb spline-viewer");
+  if (!viewer) return;
+
+  window.__baselineSplineBlendHook = "initialized";
+
+  const mobileQuery = window.matchMedia("(max-width: 620px)");
+  const edgeMask =
+    "radial-gradient(ellipse closest-side at 58% 46%, #000 0%, #000 66%, rgba(0, 0, 0, 0.78) 85%, transparent 100%)";
+  let attempts = 0;
+  let retryTimer = null;
+
+  function applyCanvasBlend() {
+    const canvas = viewer.shadowRoot?.querySelector("canvas");
+    if (!canvas) {
+      attempts += 1;
+      if (attempts < 160) retryTimer = window.setTimeout(applyCanvasBlend, 250);
+      return;
+    }
+
+    canvas.style.setProperty("background", "#000000");
+    canvas.style.setProperty("background-color", "#000000");
+    window.__baselineSplineBlendHook = mobileQuery.matches ? "mobile-canvas" : "desktop-clear";
+
+    if (mobileQuery.matches) {
+      canvas.style.setProperty("-webkit-mask-image", edgeMask);
+      canvas.style.setProperty("mask-image", edgeMask);
+      canvas.style.setProperty("-webkit-mask-repeat", "no-repeat");
+      canvas.style.setProperty("mask-repeat", "no-repeat");
+    } else {
+      canvas.style.removeProperty("-webkit-mask-image");
+      canvas.style.removeProperty("mask-image");
+      canvas.style.removeProperty("-webkit-mask-repeat");
+      canvas.style.removeProperty("mask-repeat");
+    }
+  }
+
+  viewer.addEventListener("load", applyCanvasBlend);
+  viewer.addEventListener("load-complete", applyCanvasBlend);
+  window.addEventListener("load", applyCanvasBlend);
+  customElements.whenDefined("spline-viewer").then(applyCanvasBlend);
+  mobileQuery.addEventListener?.("change", applyCanvasBlend);
+  applyCanvasBlend();
+
+  window.addEventListener("pagehide", () => {
+    if (retryTimer) window.clearTimeout(retryTimer);
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMobileSplineCanvasBlend);
+} else {
+  initMobileSplineCanvasBlend();
+}
+
 // Scroll-jacking hero zoom: image zooms before page scrolls
 try {
   const hero = document.querySelector(".hero--engineered");
@@ -127,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Active nav highlighting (IntersectionObserver)
-const sectionIds = ["services", "process", "projects", "about", "contact"];
+const sectionIds = ["services", "projects", "about", "contact"];
 const links = new Map();
 
 document.querySelectorAll(".nav-link").forEach((a) => {
