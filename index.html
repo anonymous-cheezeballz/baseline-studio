@@ -8,22 +8,27 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Baseline Studio designs and builds high-quality websites for small businesses—balancing aesthetics with function."
+      content="Baseline Studio is an AI-assisted content studio building ongoing content systems—strategy, photography, video, and production—for professionals and small businesses in the Chicago suburbs."
     />
 
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
     <!-- Styles -->
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./home.css?v=mobile-spline-9" />
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"
+    ></script>
   </head>
 
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -42,99 +47,225 @@
         </button>
 
         <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="./start-project.html#start-project-form">Start a Project</a>
+          <a class="nav-link nav-link--cta" href="./start-project.html#start-project-form">Start a Project</a>
           <a class="nav-link" href="./portfolio.html">Portfolio</a>
           <a class="nav-link" href="./about.html">About</a>
         </nav>
       </div>
     </header>
 
-    <!-- Primary Hero (Engineered) -->
-<section class="hero hero--engineered">
-  <div class="hero-media">
-    <img src="./assets/hero/engineered-hero.webp" alt="" />
-  </div>
-  
-  <div class="hero-content reveal">
-    <div class="hero-copy">
-      <h1 class="hero-title hero-title--stacked" aria-label="Meet your Digital Foundation for timeless design.">
-        <span class="hero-title-line hero-title-line--top">Meet your</span>
-        <span class="hero-title-line hero-title-line--focus">Digital Foundation</span>
-        <span class="hero-title-line hero-title-line--bottom">for timeless design.</span>
-      </h1>
-    </div>
-  </div>
-</section>
+    <!-- Hero -->
+    <section class="hp-hero" aria-labelledby="hp-hero-title">
+      <div class="container hp-hero__row">
+        <div class="hp-hero__main">
+          <h1 id="hp-hero-title" class="hp-hero__title">
+            <span class="hp-hero__title-line hp-hero__title-line--solid">Custom websites.</span>
+            <span class="hp-hero__title-line hp-hero__title-line--lit">Premium marketing.</span>
+            <span class="hp-hero__title-line hp-hero__title-line--glass">Brand identity development.</span>
+          </h1>
 
+          <div class="hp-hero__actions">
+            <a class="hp-btn" href="./start-project.html">Start a project</a>
+            <a class="hp-link" href="./portfolio.html">View selected work <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
 
-  
+        <div class="hp-hero__side" aria-hidden="true">
+          <div class="hp-hero__orb">
+            <spline-viewer
+              url="https://prod.spline.design/T4DpV3dquqkq9EaR/scene.splinecode"
+            ></spline-viewer>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <main id="main">
-      <!-- Secondary hero / intro -->
-<section class="home-hero reveal">
-  <div class="container">
-    <h1 class="hero-title">
-      Timeless design.<br />
-      Endless creativity.
-    </h1>
+      <section class="hp-section hp-work" aria-labelledby="hp-work-title">
+        <div class="container hp-section__intro">
+          <h2 id="hp-work-title">Selected work</h2>
+        </div>
 
-    <p class="hero-lede">
-      Baseline Studio designs and builds high-quality websites that balance
-      aesthetics with function.
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="./start-project.html">Start a project</a>
-    </div>
-  </div>
-</section>
-
-      <!-- Portfolio -->
-      <section id="deliverables" class="section">
         <div class="container">
-          <div class="section-head">
-            <h2>Portfolio</h2>
-            <p>A preview of recent work and what’s currently in progress.</p>
+          <a class="hp-work__feature" href="./work/nole-protein.html">
+            <figure class="hp-work__media">
+              <img
+                src="./assets/images/nole-homepage.png"
+                alt="Nole Protein website homepage"
+                loading="lazy"
+              />
+            </figure>
+            <div class="hp-work__caption">
+              <span class="hp-work__name">Nole Protein</span>
+              <span class="hp-work__descriptor">Brand identity · Website <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="hp-section hp-services" aria-labelledby="hp-services-title">
+        <div class="container hp-section__intro">
+          <h2 id="hp-services-title">Services</h2>
+        </div>
+
+        <div class="container hp-services__list">
+          <article class="hp-service hp-service--content">
+            <div class="hp-service__icon" aria-hidden="true">
+              <svg viewBox="0 0 72 72" focusable="false">
+                <circle cx="24" cy="36" r="17" />
+                <path d="M20 27.5 34 36 20 44.5Z" />
+                <path d="M45 23v26" />
+                <path d="M53 18v36" />
+                <path d="M61 25v22" />
+                <path d="M67 32v8" />
+              </svg>
+            </div>
+            <h3>Ongoing Content</h3>
+            <p>Plan. Create. Deliver. Repeat.</p>
+          </article>
+
+          <article class="hp-service hp-service--brand">
+            <div class="hp-service__icon" aria-hidden="true">
+              <svg viewBox="0 0 72 72" focusable="false">
+                <path d="M36 9 52 35 43 51H29L20 35Z" />
+                <path d="M36 9v26" />
+                <circle cx="36" cy="35" r="5.5" />
+                <path d="M27 51h18v10H27Z" />
+              </svg>
+            </div>
+            <h3>Brand identity</h3>
+            <p>Discover. Design. Refine. Evolve.</p>
+          </article>
+
+          <article class="hp-service hp-service--web">
+            <div class="hp-service__icon" aria-hidden="true">
+              <svg viewBox="0 0 72 72" focusable="false">
+                <rect x="14" y="17" width="44" height="36" rx="3" />
+                <path d="M14 27h44" />
+                <path d="M21 22h.1" />
+                <path d="M28 22h.1" />
+                <path d="M35 22h.1" />
+                <path d="M21 34h14v14H21Z" />
+                <path d="M41 34h11" />
+                <path d="M41 42h11" />
+                <path d="M41 49h11" />
+              </svg>
+            </div>
+            <h3>Websites</h3>
+            <p>Design. Build. Engage. Convert.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="hp-section hp-premise" aria-labelledby="hp-premise-title">
+        <div class="container hp-premise__grid">
+          <div class="hp-premise__lead">
+            <h2 id="hp-premise-title">
+              AI should make the work
+              <span>more human. Not less.</span>
+            </h2>
           </div>
 
-          <div class="deliverables-grid">
-            <a class="deliver-card deliver-card--media deliver-card--link" href="./portfolio.html">
-              <div class="deliver-summary">
-                <div class="deliver-media">
-                  <img class="deliver-img" src="./assets/images/nole-homepage.png" alt="Nole Protein website preview" />
-                  <span class="deliver-badge">Featured Project</span>
-                </div>
+          <div class="hp-premise__body">
+            <p>
+              Technology should handle the repetition—not the thinking, taste,
+              or judgment.
+            </p>
+            <p>
+              We use AI behind the scenes to move faster and explore further,
+              leaving more time for what matters: creating work that feels
+              thoughtful, original, and unmistakably yours.
+            </p>
+          </div>
+        </div>
 
-                <div class="deliver-content">
-                  <h3>Nole Protein</h3>
-                  <p class="deliver-copy deliver-copy--muted">
-                    Nole is a startup based in Mexico City focused on redefining the protein powder industry by combining modern science with traditional pinole recipes.
-                  </p>
-                  <span class="deliver-cta-wrap" aria-hidden="true">
-                    <span class="deliver-cta">View Project</span>
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
-              <div class="deliver-summary">
-                <div class="deliver-media deliver-media--placeholder">
-                  <span class="deliver-badge">Coming Soon</span>
-                </div>
-              </div>
+        <div class="container hp-keyboard" aria-hidden="true">
+          <div class="hp-keyboard__surface">
+            <div class="hp-keyboard__row hp-keyboard__row--top">
+              <span class="hp-key">esc</span>
+              <span class="hp-key">1</span>
+              <span class="hp-key">2</span>
+              <span class="hp-key">3</span>
+              <span class="hp-key">4</span>
+              <span class="hp-key">5</span>
+              <span class="hp-key">6</span>
+              <span class="hp-key">7</span>
+              <span class="hp-key">8</span>
+              <span class="hp-key">9</span>
+              <span class="hp-key">0</span>
+              <span class="hp-key hp-key--wide">delete</span>
             </div>
-
-            <div class="deliver-card deliver-card--media deliver-card--placeholder" aria-disabled="true">
-              <div class="deliver-summary">
-                <div class="deliver-media deliver-media--placeholder">
-                  <span class="deliver-badge">Coming Soon</span>
-                </div>
-              </div>
+            <div class="hp-keyboard__row">
+              <span class="hp-key hp-key--tab">tab</span>
+              <span class="hp-key">Q</span>
+              <span class="hp-key">W</span>
+              <span class="hp-key">E</span>
+              <span class="hp-key">R</span>
+              <span class="hp-key">T</span>
+              <span class="hp-key">Y</span>
+              <span class="hp-key">U</span>
+              <span class="hp-key">I</span>
+              <span class="hp-key">O</span>
+              <span class="hp-key">P</span>
+              <span class="hp-key">\</span>
+            </div>
+            <div class="hp-keyboard__row">
+              <span class="hp-key hp-key--caps">caps</span>
+              <span class="hp-key">A</span>
+              <span class="hp-key">S</span>
+              <span class="hp-key">D</span>
+              <span class="hp-key">F</span>
+              <span class="hp-key">G</span>
+              <span class="hp-key hp-key--lit">H</span>
+              <span class="hp-key hp-key--lit">J</span>
+              <span class="hp-key">K</span>
+              <span class="hp-key">L</span>
+              <span class="hp-key hp-key--return">return</span>
+            </div>
+            <div class="hp-keyboard__row">
+              <span class="hp-key hp-key--shift">shift</span>
+              <span class="hp-key">Z</span>
+              <span class="hp-key">X</span>
+              <span class="hp-key">C</span>
+              <span class="hp-key">V</span>
+              <span class="hp-key hp-key--lit">B</span>
+              <span class="hp-key hp-key--lit">N</span>
+              <span class="hp-key">M</span>
+              <span class="hp-key">,</span>
+              <span class="hp-key">.</span>
+              <span class="hp-key hp-key--shift">shift</span>
+            </div>
+            <div class="hp-keyboard__row hp-keyboard__row--bottom">
+              <span class="hp-key hp-key--mod">ctrl</span>
+              <span class="hp-key hp-key--mod">opt</span>
+              <span class="hp-key hp-key--mod">cmd</span>
+              <span class="hp-key hp-key--space hp-key--lit">space</span>
+              <span class="hp-key hp-key--mod hp-key--lit">cmd</span>
+              <span class="hp-key hp-key--mod">fn</span>
+              <span class="hp-key hp-key--arrow">←</span>
+              <span class="hp-key hp-key--arrow">→</span>
             </div>
           </div>
         </div>
       </section>
+
+    </main>
+
+    <section class="hp-cta">
+      <div class="container hp-cta__inner">
+        <h2>
+          Let’s make your brand
+          <span>unmistakably yours.</span>
+        </h2>
+        <p>
+          Tell us what makes your business different. We’ll help you express it
+          through thoughtful strategy, original content, and creative work that
+          feels true to who you are.
+        </p>
+        <a class="hp-btn" href="./start-project.html">Start a project</a>
+      </div>
+    </section>
+
     <footer class="site-footer">
       <div class="container">
         <p>© Baseline Studio 2026</p>
@@ -142,6 +273,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="./script.js" defer></script>
+    <script src="./script.js?v=orb-canvas-blend-1" defer></script>
   </body>
 </html>
