@@ -643,6 +643,14 @@ html {
   display: block;
 }
 
+.hp-premise__lead h2 .hp-premise__title-desktop {
+  display: contents;
+}
+
+.hp-premise__lead h2 .hp-premise__title-mobile {
+  display: none;
+}
+
 .hp-premise__body {
   max-width: 42ch;
   padding-top: 2px;
@@ -1371,15 +1379,29 @@ html {
     padding-top: 50px;
   }
 
-  .hp-section h2,
-  .hp-premise__lead h2 {
+  .hp-section h2 {
     font-size: clamp(34px, 9vw, 36px);
     line-height: 1.07;
   }
 
   .hp-premise__lead h2 {
-    width: calc(var(--hp-mobile-copy) - 18px);
-    max-width: 18ch;
+    width: var(--hp-mobile-copy);
+    max-width: var(--hp-mobile-copy);
+  }
+
+  .hp-premise__lead h2 .hp-premise__title-desktop {
+    display: none;
+  }
+
+  .hp-premise__lead h2 .hp-premise__title-mobile {
+    display: block;
+  }
+
+  .hp-premise__mline {
+    display: block;
+    font-size: clamp(2rem, 8.8vw, 2.5rem);
+    line-height: 1.02;
+    white-space: nowrap;
   }
 
   .hp-premise__grid {
