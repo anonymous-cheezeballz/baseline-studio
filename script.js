@@ -30,27 +30,57 @@ function initHomepageSplineEntrance() {
   const viewer = orb ? orb.querySelector("spline-viewer") : null;
   if (!orb || !viewer) return;
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const desktopSplineUrl = viewer.dataset.desktopUrl;
+  const mobileSplineUrl = viewer.dataset.mobileUrl;
+  const mobileViewport = window.matchMedia("(max-width: 620px)");
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
   let revealed = false;
   let fallbackTimer = null;
   let loadedStateTimer = null;
 
+  function applySplineScene() {
+    const nextUrl = mobileViewport.matches
+      ? mobileSplineUrl
+      : desktopSplineUrl;
+
+    if (!nextUrl || viewer.getAttribute("url") === nextUrl) return;
+
+    viewer.setAttribute("url", nextUrl);
+  }
+
   function revealOrb(source) {
     if (revealed) return;
+
     revealed = true;
+
     if (fallbackTimer) window.clearTimeout(fallbackTimer);
     if (loadedStateTimer) window.clearInterval(loadedStateTimer);
+
     orb.dataset.splineEntrance = source;
     orb.classList.add("is-spline-loaded");
   }
 
-  if (prefersReduced.matches) {
-    revealOrb("reduced-motion");
-    return;
-  }
-
   function onSplineLoaded(event) {
     requestAnimationFrame(() => revealOrb(event.type));
+  }
+
+  function onViewportChange() {
+    applySplineScene();
+  }
+
+  if (typeof mobileViewport.addEventListener === "function") {
+    mobileViewport.addEventListener("change", onViewportChange);
+  } else {
+    mobileViewport.addListener(onViewportChange);
+  }
+
+  if (prefersReduced.matches) {
+    revealOrb("reduced-motion");
+    applySplineScene();
+    return;
   }
 
   viewer.addEventListener("load", onSplineLoaded, { once: true });
@@ -64,7 +94,12 @@ function initHomepageSplineEntrance() {
     if (viewer._loaded) revealOrb("loaded-state");
   }, 250);
 
-  fallbackTimer = window.setTimeout(() => revealOrb("fallback"), 6500);
+  fallbackTimer = window.setTimeout(
+    () => revealOrb("fallback"),
+    6500
+  );
+
+  applySplineScene();
 }
 
 if (document.readyState === "loading") {

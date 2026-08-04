@@ -1294,33 +1294,6 @@ html {
     }
   }
 
-  /*
-   * Perimeter-only feather: the Spline canvas's own render box is much
-   * larger than the visible orb artwork (it reserves room for the
-   * entrance-slide animation), and the "empty" scene background it
-   * renders there is not exactly #000 — on real iPhones this shows up
-   * as a near-black rectangle around the orb. This pseudo-element sits
-   * above the canvas and is fully transparent over the orb + its glow,
-   * fading to solid #000 only past the measured artwork bounds, so it
-   * never touches the visible artwork itself.
-   */
-  .hp-hero__orb::after {
-    content: "";
-    position: absolute;
-    top: -90px;
-    right: -200px;
-    bottom: -160px;
-    left: -370px;
-    z-index: 2;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 62% 68% at 61% 48%,
-      transparent 0%,
-      transparent 42%,
-      rgba(0, 0, 0, 0.5) 70%,
-      #000 100%
-    );
-  }
 
   .hp-hero__side::before {
     content: none;
