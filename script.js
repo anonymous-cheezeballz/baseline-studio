@@ -73,61 +73,6 @@ if (document.readyState === "loading") {
   initHomepageSplineEntrance();
 }
 
-function initMobileSplineCanvasBlend() {
-  const viewer = document.querySelector(".hp-hero__orb spline-viewer");
-  if (!viewer) return;
-
-  window.__baselineSplineBlendHook = "initialized";
-
-  const mobileQuery = window.matchMedia("(max-width: 620px)");
-  const edgeMask =
-    "radial-gradient(ellipse closest-side at 58% 46%, #000 0%, #000 66%, rgba(0, 0, 0, 0.78) 85%, transparent 100%)";
-  let attempts = 0;
-  let retryTimer = null;
-
-  function applyCanvasBlend() {
-    const canvas = viewer.shadowRoot?.querySelector("canvas");
-    if (!canvas) {
-      attempts += 1;
-      if (attempts < 160) retryTimer = window.setTimeout(applyCanvasBlend, 250);
-      return;
-    }
-
-    canvas.style.setProperty("background", "#000000");
-    canvas.style.setProperty("background-color", "#000000");
-    window.__baselineSplineBlendHook = mobileQuery.matches ? "mobile-canvas" : "desktop-clear";
-
-    if (mobileQuery.matches) {
-      canvas.style.setProperty("-webkit-mask-image", edgeMask);
-      canvas.style.setProperty("mask-image", edgeMask);
-      canvas.style.setProperty("-webkit-mask-repeat", "no-repeat");
-      canvas.style.setProperty("mask-repeat", "no-repeat");
-    } else {
-      canvas.style.removeProperty("-webkit-mask-image");
-      canvas.style.removeProperty("mask-image");
-      canvas.style.removeProperty("-webkit-mask-repeat");
-      canvas.style.removeProperty("mask-repeat");
-    }
-  }
-
-  viewer.addEventListener("load", applyCanvasBlend);
-  viewer.addEventListener("load-complete", applyCanvasBlend);
-  window.addEventListener("load", applyCanvasBlend);
-  customElements.whenDefined("spline-viewer").then(applyCanvasBlend);
-  mobileQuery.addEventListener?.("change", applyCanvasBlend);
-  applyCanvasBlend();
-
-  window.addEventListener("pagehide", () => {
-    if (retryTimer) window.clearTimeout(retryTimer);
-  });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initMobileSplineCanvasBlend);
-} else {
-  initMobileSplineCanvasBlend();
-}
-
 // Scroll-jacking hero zoom: image zooms before page scrolls
 try {
   const hero = document.querySelector(".hero--engineered");
