@@ -1152,11 +1152,15 @@ html {
 
   .hp-hero {
     padding-top: 38px;
-    padding-bottom: 34px;
-    min-height: clamp(620px, 166vw, 690px);
+    padding-bottom: 16px;
+    min-height: 0;
     height: auto;
-    min-block-size: clamp(620px, 166vw, 690px);
+    min-block-size: 0;
     block-size: auto;
+  }
+
+  .hp-work {
+    padding-top: 32px;
   }
 
   .hp-hero::before,
