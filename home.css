@@ -1159,6 +1159,12 @@ html {
     block-size: auto;
   }
 
+  /* Pull the next section into the unused portion of the mobile hero
+     without collapsing the hero or disturbing the Spline artwork. */
+  .hp-work {
+    margin-top: -140px;
+  }
+
   .hp-hero::before,
   .hp-hero::after {
     content: none;
