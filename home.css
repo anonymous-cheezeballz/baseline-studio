@@ -1249,7 +1249,7 @@ html {
     max-width: min(330px, var(--hp-mobile-copy));
     height: clamp(206px, 56vw, 238px);
     min-height: 0;
-    margin: -8px auto 0 0;
+    margin: -72px auto 0 0;
     overflow: visible;
   }
 
@@ -1267,7 +1267,7 @@ html {
   .hp-hero__orb spline-viewer {
     display: block;
     position: absolute;
-    top: -128px;
+    top: -148px;
     right: auto;
     bottom: auto;
     left: 50%;
@@ -1275,7 +1275,7 @@ html {
     height: 430px;
     background: #000000;
     background-color: #000000;
-    transform: translateX(-87%) scale(0.88);
+    transform: translateX(-102%) scale(0.88);
     transform-origin: 50% 42%;
   }
 
@@ -1286,11 +1286,11 @@ html {
 
   @keyframes hp-mobile-spline-enter {
     from {
-      transform: translateX(-109%) scale(0.88);
+      transform: translateX(-124%) scale(0.88);
     }
 
     to {
-      transform: translateX(-87%) scale(0.88);
+      transform: translateX(-102%) scale(0.88);
     }
   }
 
