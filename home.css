@@ -1275,7 +1275,7 @@ html {
     height: 430px;
     background: #000000;
     background-color: #000000;
-    transform: translateX(-86%) scale(0.745);
+    transform: translateX(-87%) scale(0.88);
     transform-origin: 50% 42%;
   }
 
@@ -1286,11 +1286,11 @@ html {
 
   @keyframes hp-mobile-spline-enter {
     from {
-      transform: translateX(-108%) scale(0.745);
+      transform: translateX(-109%) scale(0.88);
     }
 
     to {
-      transform: translateX(-86%) scale(0.745);
+      transform: translateX(-87%) scale(0.88);
     }
   }
 
