@@ -6,18 +6,18 @@ DEFAULT SCOPE:
 - ONLY work on the Start Project page.
 
 Allowed files (default):
-- start-project.html
-- style.css OR a new start-project.css
-- minimal nav link edits in index.html (link targets only)
+- website/start-project.html
+- website/style.css OR a new website/start-project.css
+- minimal nav link edits in website/index.html (link targets only)
 
 EXPLICIT EXCEPTION — AUTHORIZED:
-- You ARE authorized to edit the "Core Qualities" / deliverables cards section in index.html.
+- You ARE authorized to edit the "Core Qualities" / deliverables cards section in website/index.html.
 - This exception exists specifically to allow interactive expand/collapse behavior.
 
 Allowed files for this exception:
-- index.html (Core Qualities / deliverables section ONLY)
-- the CSS file linked by index.html (style.css)
-- script.js (ONLY if required, and ONLY scoped to these cards)
+- website/index.html (Core Qualities / deliverables section ONLY)
+- the CSS file linked by website/index.html (website/style.css)
+- website/script.js (ONLY if required, and ONLY scoped to these cards)
 
 Hard constraints for this exception:
 - No redesign
@@ -43,6 +43,6 @@ After each task, list:
 - What changed
 - How to test
 ## Additional allowed scope (Baseline Studio)
-- Allowed: implement interactive expand/collapse behavior for the "Core Qualities" cards on index.html.
-- Allowed files: index.html, the CSS file linked by index.html (style.css or styles.css), and script.js (only if necessary).
+- Allowed: implement interactive expand/collapse behavior for the "Core Qualities" cards on website/index.html.
+- Allowed files: website/index.html, the CSS file linked by website/index.html (website/style.css or website/styles.css), and website/script.js (only if necessary).
 - Constraints: minimal changes, no redesign, do not remove images, do not change other sections.
