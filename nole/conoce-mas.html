@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nole Protein — Conoce más</title>
+    <meta
+      name="description"
+      content="Conoce más sobre la calidad, nutrición y tradición detrás de Nole Protein."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      .ncm-page section + section {
+        border-top: 1px solid var(--stroke);
+      }
+
+      .ncm-hero,
+      .ncm-stats,
+      .ncm-comparison,
+      .ncm-download,
+      .ncm-steps,
+      .ncm-story {
+        padding: clamp(72px, 10vw, 128px) 0;
+      }
+
+      .ncm-hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ncm-hero::before,
+      .ncm-comparison::before,
+      .ncm-steps::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        inset: auto;
+        width: min(38vw, 420px);
+        height: min(34vw, 300px);
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(47, 107, 255, 0.1) 0%,
+          rgba(47, 107, 255, 0.03) 52%,
+          rgba(47, 107, 255, 0) 100%
+        );
+        filter: blur(20px);
+      }
+
+      .ncm-hero::before {
+        top: -40px;
+        right: min(8vw, 80px);
+      }
+
+      .ncm-comparison,
+      .ncm-steps {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .ncm-comparison::before {
+        top: 24px;
+        right: 0;
+      }
+
+      .ncm-steps::before {
+        top: -10px;
+        left: 0;
+      }
+
+      .ncm-hero__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+        gap: clamp(28px, 5vw, 64px);
+        align-items: center;
+      }
+
+      .ncm-hero__title,
+      .ncm-section__title,
+      .ncm-story__title {
+        font-size: clamp(36px, 5vw, 64px);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+      }
+
+      .ncm-hero__copy {
+        max-width: 56ch;
+      }
+
+      .ncm-claims {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .ncm-claim {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius-sm);
+        background: rgba(244, 244, 244, 0.03);
+      }
+
+      .ncm-claim::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(47, 107, 255, 0.7);
+        box-shadow: 0 0 0 6px rgba(47, 107, 255, 0.12);
+        flex-shrink: 0;
+      }
+
+      .ncm-hero__aside {
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          180deg,
+          rgba(244, 244, 244, 0.05) 0%,
+          rgba(244, 244, 244, 0.02) 100%
+        );
+        padding: clamp(24px, 4vw, 36px);
+        box-shadow: var(--shadow);
+      }
+
+      .ncm-hero__aside-label,
+      .ncm-section__label,
+      .ncm-story__label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+
+      .ncm-hero__aside-copy {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .ncm-stats__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--stroke);
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .ncm-stat {
+        background: var(--bg);
+        padding: 32px 24px;
+      }
+
+      .ncm-stat__value {
+        font-size: clamp(34px, 4.8vw, 58px);
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .ncm-stat__label {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .ncm-comparison__head,
+      .ncm-steps__head,
+      .ncm-story__grid {
+        position: relative;
+        z-index: 1;
+      }
+
+      .ncm-comparison__head,
+      .ncm-steps__head {
+        margin-bottom: clamp(40px, 6vw, 64px);
+      }
+
+      .ncm-comparison__lede,
+      .ncm-steps__subhead,
+      .ncm-story__body {
+        color: var(--muted);
+      }
+
+      .ncm-comparison__layout {
+        display: grid;
+        grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+        gap: clamp(24px, 4vw, 48px);
+        align-items: start;
+      }
+
+      .ncm-product-card {
+        border: 1px solid var(--stroke);
+        border-radius: calc(var(--radius) + 4px);
+        background: linear-gradient(
+          180deg,
+          rgba(244, 244, 244, 0.05) 0%,
+          rgba(244, 244, 244, 0.02) 100%
+        );
+        padding: 28px;
+        text-align: center;
+      }
+
+      .ncm-product-card img {
+        display: block;
+        width: min(100%, 320px);
+        height: auto;
+        margin: 0 auto 18px;
+      }
+
+      .ncm-product-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .ncm-comparison__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .ncm-panel {
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        background: rgba(244, 244, 244, 0.03);
+      }
+
+      .ncm-panel--reference {
+        background: rgba(47, 107, 255, 0.05);
+        border-color: rgba(47, 107, 255, 0.22);
+      }
+
+      .ncm-panel__title {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+
+      .ncm-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .ncm-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: baseline;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(244, 244, 244, 0.08);
+      }
+
+      .ncm-list li:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .ncm-list__label {
+        color: var(--muted);
+      }
+
+      .ncm-list__value {
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .ncm-download__card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: clamp(24px, 4vw, 36px);
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        background: rgba(244, 244, 244, 0.03);
+      }
+
+      .ncm-download__copy p {
+        color: var(--muted);
+        margin-top: 8px;
+      }
+
+      .ncm-steps__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .ncm-step {
+        padding: 30px 24px;
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        background: rgba(244, 244, 244, 0.02);
+      }
+
+      .ncm-step__num {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .ncm-step__title {
+        font-size: clamp(30px, 4vw, 48px);
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .ncm-story__grid {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: clamp(32px, 7vw, 88px);
+      }
+
+      .ncm-story__body p {
+        font-size: clamp(16px, 1.55vw, 19px);
+        line-height: 1.8;
+      }
+
+      .ncm-story__body p + p {
+        margin-top: 20px;
+      }
+
+      .ncm-story__body strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      @media (max-width: 960px) {
+        .ncm-hero__grid,
+        .ncm-comparison__layout,
+        .ncm-story__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ncm-stats__grid,
+        .ncm-comparison__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .ncm-comparison__grid .ncm-panel--reference {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .ncm-stats__grid,
+        .ncm-comparison__grid,
+        .ncm-steps__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .ncm-stat,
+        .ncm-panel,
+        .ncm-step,
+        .ncm-product-card {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Nole Protein inicio">
+          <img src="../assets/images/nole-logo.svg" alt="Nole Protein" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          type="button"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html">Inicio</a>
+          <a class="nav-link" href="./product.html">Producto</a>
+          <a class="nav-link" href="./index.html#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="ncm-page">
+      <section class="ncm-hero reveal">
+        <div class="container ncm-hero__grid">
+          <div class="ncm-hero__copy">
+            <p class="kicker">Nole Protein</p>
+            <h1 class="ncm-hero__title">Intención y calidad en cada ingrediente</h1>
+
+            <div class="ncm-claims" aria-label="Cualidades del producto">
+              <div class="ncm-claim">Sin saborizantes artificiales</div>
+              <div class="ncm-claim">Sin endulzantes artificiales</div>
+              <div class="ncm-claim">Sin ingredientes artificiales</div>
+            </div>
+          </div>
+
+          <aside class="ncm-hero__aside">
+            <p class="ncm-hero__aside-label">Hecho para tus mañanas</p>
+            <p class="ncm-hero__aside-copy">
+              Proteína y carbohidratos esenciales en una bebida pensada para
+              acompañarte cuando necesitas nutrición práctica sin sacrificar
+              calidad.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="ncm-stats reveal">
+        <div class="container">
+          <p class="ncm-section__label">Por Porción (60 gramos)</p>
+          <h2 class="ncm-section__title">Por Porción (60 gramos):</h2>
+
+          <div class="ncm-stats__grid" aria-label="Valores nutrimentales por porción">
+            <article class="ncm-stat">
+              <div class="ncm-stat__value">24 g</div>
+              <p class="ncm-stat__label">Proteína</p>
+            </article>
+            <article class="ncm-stat">
+              <div class="ncm-stat__value">4.5 g</div>
+              <p class="ncm-stat__label">BCAAs</p>
+            </article>
+            <article class="ncm-stat">
+              <div class="ncm-stat__value">26 g</div>
+              <p class="ncm-stat__label">Carbohidratos</p>
+            </article>
+            <article class="ncm-stat">
+              <div class="ncm-stat__value">230</div>
+              <p class="ncm-stat__label">kCal</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ncm-comparison reveal">
+        <div class="container">
+          <div class="ncm-comparison__head">
+            <p class="ncm-section__label">Comparativa</p>
+            <h2 class="ncm-section__title">No es sólo un suplemento</h2>
+          </div>
+
+          <div class="ncm-comparison__layout">
+            <div class="ncm-product-card">
+              <img
+                src="../assets/nole-cup-apple.png"
+                alt="Nole Protein con manzana"
+              />
+              <p>
+                Nole Protein puede integrarse como una base práctica para un
+                desayuno equilibrado.
+              </p>
+            </div>
+
+            <div class="ncm-comparison__grid">
+              <article class="ncm-panel">
+                <h3 class="ncm-panel__title">1 Porción + 1 Manzana (100 gramos)</h3>
+                <ul class="ncm-list">
+                  <li><span class="ncm-list__label">Energía</span><span class="ncm-list__value">337kCal</span></li>
+                  <li><span class="ncm-list__label">Proteína</span><span class="ncm-list__value">24.5g</span></li>
+                  <li><span class="ncm-list__label">Carbohidratos</span><span class="ncm-list__value">53.7g</span></li>
+                  <li><span class="ncm-list__label">Fibra</span><span class="ncm-list__value">6.0g</span></li>
+                  <li><span class="ncm-list__label">Grasas</span><span class="ncm-list__value">4.4g</span></li>
+                  <li><span class="ncm-list__label">Azúcares añadidos</span><span class="ncm-list__value">5.0g</span></li>
+                </ul>
+              </article>
+
+              <article class="ncm-panel">
+                <h3 class="ncm-panel__title">1 Porción + 1 Guayaba (100g)</h3>
+                <ul class="ncm-list">
+                  <li><span class="ncm-list__label">Energía</span><span class="ncm-list__value">301kCal</span></li>
+                  <li><span class="ncm-list__label">Proteína</span><span class="ncm-list__value">26.7g</span></li>
+                  <li><span class="ncm-list__label">Carbohidratos</span><span class="ncm-list__value">40.4g</span></li>
+                  <li><span class="ncm-list__label">Fibra</span><span class="ncm-list__value">6.6g</span></li>
+                  <li><span class="ncm-list__label">Grasas</span><span class="ncm-list__value">5.1g</span></li>
+                  <li><span class="ncm-list__label">Azúcares añadidos</span><span class="ncm-list__value">5.0g</span></li>
+                </ul>
+              </article>
+
+              <article class="ncm-panel ncm-panel--reference">
+                <h3 class="ncm-panel__title">Desayuno Recomendado</h3>
+                <ul class="ncm-list">
+                  <li><span class="ncm-list__label">Energía</span><span class="ncm-list__value">300 - 500 kCal</span></li>
+                  <li><span class="ncm-list__label">Proteína</span><span class="ncm-list__value">15-30g</span></li>
+                  <li><span class="ncm-list__label">Carbohidratos</span><span class="ncm-list__value">30-75g</span></li>
+                  <li><span class="ncm-list__label">Fibra</span><span class="ncm-list__value">&gt;5g</span></li>
+                  <li><span class="ncm-list__label">Grasas</span><span class="ncm-list__value">8-15g</span></li>
+                  <li><span class="ncm-list__label">Azúcares añadidos</span><span class="ncm-list__value">&lt;6g</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ncm-download reveal">
+        <div class="container">
+          <div class="ncm-download__card">
+            <div class="ncm-download__copy">
+              <p class="ncm-section__label">Información completa</p>
+              <h2 class="ncm-section__title">Datos Nutrimentales</h2>
+              <p>Consulta el detalle completo de la información nutrimental.</p>
+            </div>
+            <a class="btn btn-secondary" href="#">Descargar Datos Nutrimentales</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="ncm-steps reveal">
+        <div class="container">
+          <div class="ncm-steps__head">
+            <p class="ncm-section__label">Rutina de mañana</p>
+            <h2 class="ncm-section__title">
+              Nole Protein te acompaña en la mañana, cuando no tienes tiempo
+            </h2>
+            <p class="ncm-steps__subhead">3 Pasos:</p>
+          </div>
+
+          <div class="ncm-steps__grid">
+            <article class="ncm-step">
+              <p class="ncm-step__num">01</p>
+              <h3 class="ncm-step__title">Scoop</h3>
+            </article>
+            <article class="ncm-step">
+              <p class="ncm-step__num">02</p>
+              <h3 class="ncm-step__title">Mix</h3>
+            </article>
+            <article class="ncm-step">
+              <p class="ncm-step__num">03</p>
+              <h3 class="ncm-step__title">Drink</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ncm-story reveal">
+        <div class="container ncm-story__grid">
+          <div>
+            <p class="ncm-story__label">Tradición mexicana</p>
+            <h2 class="ncm-story__title">¿Por qué pinole?</h2>
+          </div>
+
+          <div class="ncm-story__body">
+            <p>
+              En la sierra de Chihuahua habita la población originaria rarámuri,
+              que ha dominado el territorio por cientos de años. Su gente debe
+              emprender de forma regular caminatas extensas por sus montes y
+              barrancas. Han registrado viajes a pie de hasta 200 km en sólo 3
+              días. ¿Cuál es su secreto?
+            </p>
+            <p>
+              <strong>Pinole:</strong> fuente de carbohidratos complejos en maíz
+              tostado y molido al estilo Tarahumara; receta que les ha provisto
+              la nutrición y energía que ha ganado fama y admiración alrededor
+              del mundo. Con Nole Protein deseamos compartir las virtudes de
+              este alimento tradicional mexicano y complementar tu día con una
+              refrescante bebida de proteína y carbohidratos esenciales.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© Nole Protein <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

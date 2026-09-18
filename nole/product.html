@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nole Protein — El Producto</title>
+    <meta
+      name="description"
+      content="Proteína premium con el poder del pinole rarámuri. 24 g de proteína por porción. Sin ingredientes artificiales."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      /* ================================================================
+         Nole Product Page — all scoped under np-* prefix
+         ================================================================ */
+
+      /* ---- Hero ---- */
+
+      .np-hero {
+        position: relative;
+        min-height: calc(100vh - var(--header-h));
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .np-hero__media {
+        position: absolute;
+        inset: 0;
+      }
+
+      .np-hero__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      /* Two-layer overlay: left-to-right for text legibility + bottom vignette */
+      .np-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(
+            to right,
+            rgba(10, 10, 11, 0.90) 0%,
+            rgba(10, 10, 11, 0.58) 44%,
+            rgba(10, 10, 11, 0.18) 100%
+          ),
+          linear-gradient(
+            to top,
+            rgba(10, 10, 11, 0.70) 0%,
+            rgba(10, 10, 11, 0.00) 48%
+          );
+      }
+
+      /* Subtle blue glow behind headline — matches site aesthetic */
+      .np-hero::before {
+        content: "";
+        position: absolute;
+        inset: 8% auto auto 6%;
+        width: min(44vw, 480px);
+        height: min(30vw, 280px);
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(47, 107, 255, 0.09) 0%,
+          rgba(47, 107, 255, 0.03) 52%,
+          rgba(47, 107, 255, 0) 100%
+        );
+        filter: blur(20px);
+      }
+
+      .np-hero__content {
+        --hero-content-offset: 0px;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: clamp(100px, 16vh, 160px) 0 clamp(72px, 11vh, 120px);
+      }
+
+      .np-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+
+      .np-hero__title {
+        font-size: clamp(42px, 5.8vw, 76px);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1.0;
+        max-width: 14ch;
+        margin-bottom: 36px;
+      }
+
+      .np-claims {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .np-claim {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 244, 244, 0.13);
+        background: rgba(10, 10, 11, 0.65);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .np-claim::before {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: rgba(244, 244, 244, 0.40);
+        flex-shrink: 0;
+      }
+
+      /* ---- Stats ---- */
+
+      .np-stats {
+        padding: clamp(64px, 10vh, 100px) 0;
+        border-bottom: 1px solid var(--stroke);
+      }
+
+      .np-stats__label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+      }
+
+      /* Gap-as-divider technique: grid bg shows through 1px gaps */
+      .np-stats__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--stroke);
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .np-stat {
+        padding: 36px 28px;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .np-stat__val {
+        font-size: clamp(40px, 4.8vw, 60px);
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        line-height: 1.0;
+        color: var(--text);
+      }
+
+      .np-stat__unit {
+        font-size: 0.38em;
+        letter-spacing: 0em;
+        opacity: 0.52;
+        font-weight: 500;
+      }
+
+      .np-stat__name {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--muted);
+      }
+
+      /* ---- "No es sólo un suplemento" ---- */
+
+      .np-editorial {
+        padding: clamp(80px, 13vh, 130px) 0;
+      }
+
+      .np-editorial__head {
+        margin-bottom: clamp(52px, 8vh, 88px);
+      }
+
+      .np-editorial__title {
+        font-size: clamp(36px, 5.2vw, 68px);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1.0;
+        max-width: 16ch;
+        margin-top: 10px;
+      }
+
+      /* Combo panels */
+      .np-combos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .np-combo {
+        position: relative;
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        padding: 32px;
+        background: rgba(244, 244, 244, 0.02);
+        background-image: linear-gradient(
+          160deg,
+          rgba(244, 244, 244, 0.04),
+          rgba(244, 244, 244, 0)
+        );
+        overflow: hidden;
+      }
+
+      /* Top shimmer line */
+      .np-combo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          rgba(244, 244, 244, 0.22),
+          rgba(244, 244, 244, 0.06),
+          rgba(244, 244, 244, 0)
+        );
+      }
+
+      .np-combo__name {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        margin: 0 0 4px;
+      }
+
+      .np-combo__sub {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0 0 24px;
+        letter-spacing: 0.04em;
+      }
+
+      .np-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(244, 244, 244, 0.055);
+        font-size: 14px;
+      }
+
+      .np-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .np-row__label {
+        color: var(--muted);
+      }
+
+      .np-row__val {
+        color: var(--text);
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Recommended breakfast panel */
+      .np-recommended {
+        position: relative;
+        border: 1px solid rgba(47, 107, 255, 0.20);
+        border-radius: var(--radius);
+        padding: 32px;
+        background: rgba(47, 107, 255, 0.04);
+        overflow: hidden;
+      }
+
+      .np-recommended::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          rgba(47, 107, 255, 0.55),
+          rgba(47, 107, 255, 0.14),
+          rgba(47, 107, 255, 0)
+        );
+      }
+
+      .np-recommended__label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .np-recommended__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 24px;
+      }
+
+      .np-rec-item__label {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0 0 4px;
+      }
+
+      .np-rec-item__val {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--text);
+        margin: 0;
+      }
+
+      /* Download row */
+      .np-download-row {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .np-download-label {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .np-download-row .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ---- 3 Pasos ---- */
+
+      .np-steps {
+        padding: clamp(80px, 12vh, 120px) 0;
+        border-top: 1px solid var(--stroke);
+        border-bottom: 1px solid var(--stroke);
+        position: relative;
+        isolation: isolate;
+      }
+
+      /* Subtle glow for this section */
+      .np-steps::before {
+        content: "";
+        position: absolute;
+        inset: 0 10% auto auto;
+        width: min(36vw, 380px);
+        height: 240px;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(47, 107, 255, 0.07) 0%,
+          rgba(47, 107, 255, 0.02) 50%,
+          rgba(47, 107, 255, 0) 100%
+        );
+        filter: blur(20px);
+      }
+
+      .np-steps__inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .np-steps__intro {
+        margin-bottom: clamp(52px, 8vh, 80px);
+        max-width: 42ch;
+      }
+
+      .np-steps__title {
+        font-size: clamp(26px, 3.2vw, 42px);
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        margin-top: 10px;
+      }
+
+      .np-steps__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .np-step {
+        padding: 36px 32px;
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        background: rgba(244, 244, 244, 0.02);
+        background-image: linear-gradient(
+          180deg,
+          rgba(244, 244, 244, 0.035) 0%,
+          rgba(244, 244, 244, 0) 58%
+        );
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+      }
+
+      .np-step:hover {
+        border-color: rgba(47, 107, 255, 0.28);
+        box-shadow:
+          0 0 0 1px rgba(47, 107, 255, 0.14),
+          0 0 28px rgba(47, 107, 255, 0.10);
+        transform: translateY(-2px);
+      }
+
+      .np-step__num {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+      }
+
+      .np-step__name {
+        font-size: clamp(34px, 3.8vw, 52px);
+        font-weight: 600;
+        letter-spacing: -0.048em;
+        line-height: 1.0;
+        color: var(--text);
+      }
+
+      /* ---- Story ---- */
+
+      .np-story {
+        padding: clamp(88px, 14vh, 148px) 0;
+      }
+
+      .np-story__grid {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 88px;
+        align-items: start;
+      }
+
+      .np-story__left {
+        position: sticky;
+        top: calc(var(--header-h) + 32px);
+      }
+
+      .np-story__title {
+        font-size: clamp(34px, 4.2vw, 56px);
+        letter-spacing: -0.044em;
+        line-height: 1.04;
+        margin-top: 12px;
+      }
+
+      .np-story__body p {
+        font-size: clamp(16px, 1.65vw, 19px);
+        line-height: 1.78;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .np-story__body p + p {
+        margin-top: 24px;
+      }
+
+      .np-story__body strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      /* ================================================================
+         Responsive
+         ================================================================ */
+
+      @media (max-width: 960px) {
+        .np-stats__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .np-combos {
+          grid-template-columns: 1fr;
+        }
+
+        .np-recommended__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .np-steps__grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .np-step {
+          flex-direction: row;
+          align-items: center;
+          padding: 24px 28px;
+          gap: 28px;
+        }
+
+        .np-step:hover {
+          transform: none;
+        }
+
+        .np-story__grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .np-story__left {
+          position: static;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .np-hero__title {
+          max-width: 100%;
+          font-size: clamp(36px, 9.5vw, 52px);
+        }
+
+        .np-stat {
+          padding: 26px 22px;
+        }
+
+        .np-combo {
+          padding: 24px;
+        }
+
+        .np-recommended {
+          padding: 24px;
+        }
+
+        .np-recommended__grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .np-step {
+          padding: 20px 22px;
+          gap: 20px;
+        }
+
+        .np-step__name {
+          font-size: clamp(28px, 7.5vw, 40px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Nole Protein inicio">
+          <img src="../assets/images/nole-logo.svg" alt="Nole Protein" />
+        </a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          type="button"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html">Inicio</a>
+          <a class="nav-link is-active" href="./product.html">Producto</a>
+          <a class="nav-link" href="./index.html#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Full-screen hero placed before <main>, matching the Baseline Studio
+      engineered-hero pattern in index.html for the true full-screen effect.
+    -->
+    <section class="np-hero" aria-label="Nole Protein — producto">
+      <div class="np-hero__media">
+        <img
+          src="../assets/nole-cup-apple.png"
+          alt="Vaso de Nole Protein junto a una manzana fresca"
+          loading="eager"
+        />
+      </div>
+
+      <div class="np-hero__content reveal">
+        <div class="container">
+          <p class="np-eyebrow">Nole Protein</p>
+          <h1 class="np-hero__title">
+            Intención y calidad en cada ingrediente
+          </h1>
+          <div class="np-claims">
+            <span class="np-claim">Sin saborizantes artificiales</span>
+            <span class="np-claim">Sin endulzantes artificiales</span>
+            <span class="np-claim">Sin ingredientes artificiales</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+
+      <!-- ── Nutrition stats ──────────────────────────────────────── -->
+      <section class="np-stats">
+        <div class="container">
+          <p class="np-stats__label">Por Porción — 60 gramos</p>
+          <div class="np-stats__grid">
+            <div class="np-stat">
+              <span class="np-stat__val">24<span class="np-stat__unit">g</span></span>
+              <span class="np-stat__name">Proteína</span>
+            </div>
+            <div class="np-stat">
+              <span class="np-stat__val">4.5<span class="np-stat__unit">g</span></span>
+              <span class="np-stat__name">BCAAs</span>
+            </div>
+            <div class="np-stat">
+              <span class="np-stat__val">26<span class="np-stat__unit">g</span></span>
+              <span class="np-stat__name">Carbohidratos</span>
+            </div>
+            <div class="np-stat">
+              <span class="np-stat__val">230<span class="np-stat__unit">kCal</span></span>
+              <span class="np-stat__name">Energía</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── "No es sólo un suplemento" ──────────────────────────── -->
+      <section class="np-editorial">
+        <div class="container">
+
+          <div class="np-editorial__head">
+            <p class="np-eyebrow">Nutrición completa</p>
+            <h2 class="np-editorial__title">No es sólo un suplemento</h2>
+          </div>
+
+          <!-- Combo panels -->
+          <div class="np-combos">
+
+            <div class="np-combo">
+              <h3 class="np-combo__name">1 Porción + 1 Manzana</h3>
+              <p class="np-combo__sub">100 gramos</p>
+              <div class="np-combo__rows">
+                <div class="np-row">
+                  <span class="np-row__label">Energía</span>
+                  <span class="np-row__val">337 kCal</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Proteína</span>
+                  <span class="np-row__val">24.5 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Carbohidratos</span>
+                  <span class="np-row__val">53.7 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Fibra</span>
+                  <span class="np-row__val">6.0 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Grasas</span>
+                  <span class="np-row__val">4.4 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Azúcares añadidos</span>
+                  <span class="np-row__val">5.0 g</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="np-combo">
+              <h3 class="np-combo__name">1 Porción + 1 Guayaba</h3>
+              <p class="np-combo__sub">100 gramos</p>
+              <div class="np-combo__rows">
+                <div class="np-row">
+                  <span class="np-row__label">Energía</span>
+                  <span class="np-row__val">301 kCal</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Proteína</span>
+                  <span class="np-row__val">26.7 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Carbohidratos</span>
+                  <span class="np-row__val">40.4 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Fibra</span>
+                  <span class="np-row__val">6.6 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Grasas</span>
+                  <span class="np-row__val">5.1 g</span>
+                </div>
+                <div class="np-row">
+                  <span class="np-row__label">Azúcares añadidos</span>
+                  <span class="np-row__val">5.0 g</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Recommended breakfast benchmark -->
+          <div class="np-recommended">
+            <p class="np-recommended__label">Desayuno Recomendado</p>
+            <div class="np-recommended__grid">
+              <div>
+                <p class="np-rec-item__label">Energía</p>
+                <p class="np-rec-item__val">300–500 kCal</p>
+              </div>
+              <div>
+                <p class="np-rec-item__label">Proteína</p>
+                <p class="np-rec-item__val">15–30 g</p>
+              </div>
+              <div>
+                <p class="np-rec-item__label">Carbohidratos</p>
+                <p class="np-rec-item__val">30–75 g</p>
+              </div>
+              <div>
+                <p class="np-rec-item__label">Fibra</p>
+                <p class="np-rec-item__val">&gt; 5 g</p>
+              </div>
+              <div>
+                <p class="np-rec-item__label">Grasas</p>
+                <p class="np-rec-item__val">8–15 g</p>
+              </div>
+              <div>
+                <p class="np-rec-item__label">Azúcares añadidos</p>
+                <p class="np-rec-item__val">&lt; 6 g</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Download CTA -->
+          <!-- Update href with the actual PDF path when available -->
+          <div class="np-download-row">
+            <span class="np-download-label">Datos Nutrimentales</span>
+            <a
+              class="btn btn-secondary"
+              href="#"
+              download
+              aria-label="Descargar tabla de datos nutrimentales en PDF"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 1.5v7M3.5 6.5l3.5 3.5 3.5-3.5M2 12.5h10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Descargar PDF
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── 3 Pasos ─────────────────────────────────────────────── -->
+      <section class="np-steps">
+        <div class="np-steps__inner">
+          <div class="container">
+
+            <div class="np-steps__intro">
+              <p class="np-eyebrow">Preparación</p>
+              <h2 class="np-steps__title">
+                Nole Protein te acompaña en la mañana,
+                cuando no tienes tiempo
+              </h2>
+            </div>
+
+            <div class="np-steps__grid">
+              <div class="np-step">
+                <span class="np-step__num">01</span>
+                <span class="np-step__name">Scoop</span>
+              </div>
+              <div class="np-step">
+                <span class="np-step__num">02</span>
+                <span class="np-step__name">Mix</span>
+              </div>
+              <div class="np-step">
+                <span class="np-step__num">03</span>
+                <span class="np-step__name">Drink</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ¿Por qué pinole? ─────────────────────────────────────── -->
+      <section class="np-story">
+        <div class="container">
+          <div class="np-story__grid">
+
+            <div class="np-story__left">
+              <p class="np-eyebrow">Nuestros orígenes</p>
+              <h2 class="np-story__title">¿Por qué pinole?</h2>
+            </div>
+
+            <div class="np-story__body">
+              <p>
+                En la sierra de Chihuahua habita la población originaria
+                rarámuri, que ha dominado el territorio por cientos de años.
+                Su gente debe emprender de forma regular caminatas extensas
+                por sus montes y barrancas.
+              </p>
+              <p>
+                Han registrado viajes a pie de hasta
+                <strong>200 km en sólo 3 días</strong>.
+                ¿Cuál es su secreto?
+              </p>
+              <p>
+                <strong>Pinole</strong>: fuente de carbohidratos complejos en
+                maíz tostado y molido al estilo Tarahumara; receta que les ha
+                provisto la nutrición y energía que ha ganado fama y admiración
+                alrededor del mundo.
+              </p>
+              <p>
+                Con Nole Protein deseamos compartir las virtudes de este
+                alimento tradicional mexicano y complementar tu día con una
+                refrescante bebida de proteína y carbohidratos esenciales.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© Nole Protein <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>
