@@ -1,0 +1,9 @@
+{
+  "name": "baseline-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check website/script.js && node scripts/build.mjs --check"
+  }
+}

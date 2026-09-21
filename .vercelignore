@@ -1,0 +1,12 @@
+.git
+.claude
+archive
+docs
+references
+marketing materials
+dist
+*.md
+**/.DS_Store
+website/assets/mockups
+website/assets/moodboard-images
+website/nole
