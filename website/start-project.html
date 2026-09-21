@@ -15,7 +15,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
-  </head>
+  
+<link rel="icon" type="image/svg+xml" href="./assets/images/Black%20logo.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Studio">
+<meta property="og:title" content="Start a Project — Baseline Studio">
+<meta property="og:description" content="Start a project with Baseline Studio — request a quote for a clean, engineered website.">
+<meta name="twitter:card" content="summary">
+</head>
 
   <body class="baseline-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -24,7 +31,7 @@
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
           <img
-            src="./assets/images/baseline-studio-logo-blk.svg"
+            src="./assets/images/White%20logo.svg"
             alt="Baseline Studio logo"
           />
         </a>
@@ -50,7 +57,7 @@
           <p class="sp-hero__eyebrow">Start a project</p>
 
           <h1 id="sp-hero-title" class="sp-hero__title">
-            A clean website, built to ship.
+            Tell me what you're working on.
           </h1>
         </div>
       </section>
@@ -63,9 +70,9 @@
       >
         <div class="sp-form__inner container">
           <header class="sp-form__header">
-            <h2 id="sp-form-title" class="sp-form__title">Request a quote</h2>
+            <h2 id="sp-form-title" class="sp-form__title">The basics</h2>
             <p class="sp-form__lead">
-              Share a few details and we’ll follow up with next steps and pricing.
+              Tell me what you need. I’ll follow up with next steps, timing, and pricing.
             </p>
           </header>
 
@@ -109,33 +116,32 @@
               </div>
 
               <div class="sp-field sp-field--full">
-                <label class="sp-label" for="sp-business">Business name</label>
+                <label class="sp-label" for="sp-business">Business name <span aria-hidden="true">(optional)</span></label>
                 <input
                   class="sp-input"
                   id="sp-business"
                   name="businessName"
                   type="text"
-                  required
                   placeholder="Your business or project name"
                   autocomplete="organization"
                 />
               </div>
 
               <div class="sp-field sp-field--full">
-                <label class="sp-label" for="sp-message">Brief project details</label>
+                <label class="sp-label" for="sp-message">What are you looking for?</label>
                 <textarea
                   class="sp-textarea"
                   id="sp-message"
                   name="projectDetails"
                   rows="5"
                   required
-                  placeholder="Tell us a little about your business, what you need, and anything you already have in mind."
+                  placeholder="Tell me what you need, what already exists, and anything you already have in mind."
                 ></textarea>
               </div>
             </div>
 
             <div class="sp-form__footer">
-              <button class="sp-submit" type="submit">Request a quote</button>
+              <button class="sp-submit" type="submit">Send project details</button>
             </div>
           </form>
         </div>

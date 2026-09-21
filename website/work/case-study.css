@@ -1,0 +1,286 @@
+.case-page{background:#f3f0e8;color:#111216}.case-page .site-header{background:inherit;border-bottom:1px solid rgba(17,18,22,.12)}.case-page .nav-link{color:#252831}.case-page .nav-link--cta{color:#111216;border-color:#8b919b}.case-hero{padding:clamp(130px,18vw,240px) 0 90px}.case-label,.case-meta{font:500 11px "JetBrains Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:#68707c}.case-hero__asset{display:block;width:min(100%,900px);height:auto;margin:34px 0 44px}.case-hero h1{max-width:900px;margin:24px 0;font-size:clamp(52px,9vw,130px);line-height:.88;letter-spacing:-.07em}.case-hero p{max-width:500px;font-size:20px;line-height:1.4;color:#59606b}.case-content{padding:0 0 clamp(100px,14vw,180px)}.case-content__intro{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(40px,8vw,130px);align-items:start;margin-bottom:90px}.case-content h2{margin:0;font-size:clamp(32px,4vw,62px);line-height:1;letter-spacing:-.05em}.case-content p{font-size:18px;line-height:1.55;max-width:550px}.case-image{width:100%;height:auto;display:block;margin:50px 0}.case-image--large{width:min(100%,1100px);margin-inline:auto}.case-nav{display:flex;justify-content:space-between;gap:20px;border-top:1px solid rgba(17,18,22,.2);padding-top:26px;margin-top:80px}.case-nav a{color:inherit;font-size:15px}.case-nav a:hover{color:#2f6bff}.case-page--dark{background:#080d19;color:#f2f5fa}.case-page--dark .site-header{background:#080d19;border-color:rgba(255,255,255,.15)}.case-page--dark .nav-link{color:#c6cfdd}.case-page--dark .nav-link--cta{color:#fff}.case-page--dark .case-hero p,.case-page--dark .case-meta{color:#9daabe}.case-page--dark .case-content p{color:#c6cfdd}.case-page--dark .case-nav{border-color:rgba(255,255,255,.2)}.case-page--dark .case-nav a{color:#fff}.case-page--halden{background:#f1eee7;color:#21313d}.case-page--halden .case-hero h1,.case-page--halden h2{color:#1e596f}.case-page--juniper{background:#e8dfd0;color:#342f2d}.case-page--juniper .case-hero h1,.case-page--juniper h2{color:#4f668d}@media(max-width:760px){.case-hero{padding-top:110px}.case-content__intro{display:block}.case-content__intro h2{margin-bottom:28px}.case-nav{display:grid}.case-image{margin:35px 0}}
+
+/* ============================================================
+   Unified project detail redesign
+   ============================================================ */
+
+.project-detail {
+  overflow: hidden;
+}
+
+.detail-hero {
+  padding-top: clamp(72px, 8vw, 120px);
+  padding-bottom: clamp(72px, 8vw, 110px);
+}
+
+.detail-hero__copy {
+  max-width: 1000px;
+  margin-bottom: clamp(48px, 6vw, 84px);
+}
+
+.detail-label,
+.detail-meta {
+  margin: 0;
+  font: 500 11px/1.5 "JetBrains Mono", monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.detail-hero h1 {
+  max-width: 1120px;
+  margin: 20px 0 24px;
+  font-size: clamp(54px, 8vw, 118px);
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+
+.detail-deck {
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.45;
+}
+
+.detail-hero__image,
+.detail-gallery > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.detail-story {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(280px, .65fr);
+  justify-content: space-between;
+  gap: clamp(48px, 10vw, 160px);
+  align-items: start;
+  padding-top: clamp(72px, 9vw, 130px);
+  padding-bottom: clamp(72px, 9vw, 130px);
+}
+
+.detail-story__headline h2 {
+  max-width: 700px;
+  margin: 0;
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.detail-story__body {
+  max-width: 470px;
+  padding-top: 8px;
+}
+
+.detail-story__body > p:first-child {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+}
+
+.detail-meta {
+  margin-top: 30px;
+}
+
+.detail-gallery {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+  padding-bottom: clamp(96px, 11vw, 160px);
+}
+
+.detail-story--inside {
+  width: 100%;
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+
+.detail-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 34px;
+  padding-bottom: clamp(70px, 9vw, 120px);
+  border-top: 1px solid currentColor;
+}
+
+.detail-nav a {
+  font-size: 16px;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.detail-nav a:first-child:hover {
+  transform: translateX(-4px);
+}
+
+.detail-nav a:last-child:hover {
+  transform: translateX(4px);
+}
+
+/* Northline */
+.case-page--dark .detail-label,
+.case-page--dark .detail-deck,
+.case-page--dark .detail-meta {
+  color: #9daabe;
+}
+
+.case-page--dark .detail-story__body {
+  color: #c6cfdd;
+}
+
+.case-page--dark .detail-story__headline h2 span {
+  color: #2672ff;
+}
+
+.case-page--dark .detail-nav {
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Halden */
+.case-page--halden .detail-label,
+.case-page--halden .detail-meta {
+  color: #527080;
+}
+
+.case-page--halden .detail-deck {
+  color: #50616d;
+}
+
+.case-page--halden .detail-story__headline h2 {
+  color: #1e596f;
+}
+
+.case-page--halden .detail-story__body {
+  color: #334854;
+}
+
+.case-page--halden .detail-nav {
+  border-color: rgba(33,49,61,.2);
+}
+
+/* Juniper */
+.case-page--juniper .detail-label,
+.case-page--juniper .detail-meta {
+  color: #6f737b;
+}
+
+.case-page--juniper .detail-deck {
+  color: #6b625d;
+}
+
+.case-page--juniper .detail-story__headline h2 {
+  color: #4f668d;
+}
+
+.case-page--juniper .detail-story__body {
+  color: #4b4541;
+}
+
+.case-page--juniper .detail-nav {
+  border-color: rgba(52,47,45,.2);
+}
+
+@media (max-width: 760px) {
+  .detail-hero {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .detail-hero__copy {
+    margin-bottom: 40px;
+  }
+
+  .detail-hero h1 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
+  .detail-story {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .detail-story__headline h2 {
+    font-size: clamp(38px, 11vw, 58px);
+  }
+
+  .detail-story__body {
+    padding-top: 0;
+  }
+
+  .detail-gallery {
+    gap: 24px;
+    padding-bottom: 80px;
+  }
+
+  .detail-gallery > img,
+  .detail-hero__image {
+    width: calc(100% + 24px);
+    margin-left: -12px;
+  }
+
+  .detail-nav {
+    align-items: flex-start;
+    padding-bottom: 72px;
+  }
+
+  .detail-nav a {
+    max-width: 46%;
+    font-size: 14px;
+  }
+}
+
+/* Project detail scroll fix */
+html {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.case-page {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.project-detail {
+  overflow-x: hidden;
+  overflow-y: visible;
+  height: auto;
+  min-height: 0;
+}
+
+/* Keep complete project compositions visible in one viewport */
+.detail-hero__image,
+.detail-gallery > img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+/* Hero presentation frame can be slightly more restrained */
+.detail-hero__image {
+  max-height: min(72vh, 760px);
+}
+
+/* Gallery frames should also be readable without vertical cropping */
+.detail-gallery > img {
+  max-height: min(82vh, 880px);
+}
+
+@media (max-width: 760px) {
+  .detail-hero__image,
+  .detail-gallery > img {
+    width: auto;
+    max-width: 100%;
+    max-height: 72vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

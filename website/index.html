@@ -8,7 +8,7 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Baseline Studio is an AI-assisted content studio building ongoing content systems—strategy, photography, video, and production—for professionals and small businesses in the Chicago suburbs."
+      content="Baseline Studio builds distinctive brands, websites, and content for ambitious businesses. Ideas built for what’s next."
     />
 
     <!-- Typography -->
@@ -21,273 +21,185 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./home.css?v=mobile-spline-10" />
-    <script
-      type="module"
-      src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"
-    ></script>
-  </head>
+    <link rel="stylesheet" href="./home.css?v=editorial-projects-1" />
+    <link rel="preload" as="image" href="./assets/images/Desk%20Hero%20Image.png" fetchpriority="high" />
+  
+<link rel="icon" type="image/svg+xml" href="./assets/images/Black%20logo.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baseline Studio">
+<meta property="og:title" content="Baseline Studio">
+<meta property="og:description" content="Baseline Studio builds distinctive brands, websites, and content for ambitious businesses. Ideas built for what’s next.">
+<meta name="twitter:card" content="summary">
+</head>
 
   <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <div class="hp-hero-sequence">
+    <div class="hp-hero-pin">
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="./index.html" aria-label="Baseline Studio home">
           <img
-            src="./assets/images/baseline-studio-logo-blk.svg"
+            src="./assets/images/White%20logo.svg"
             alt="Baseline Studio logo"
           />
         </a>
 
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false" type="button">
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
         </button>
 
-        <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link nav-link--cta" href="./start-project.html#start-project-form">Start a Project</a>
-          <a class="nav-link" href="./portfolio.html">Portfolio</a>
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+          <a class="nav-link" href="./portfolio.html">Work</a>
+          <a class="nav-link" href="#hp-services-title">Services</a>
           <a class="nav-link" href="./about.html">About</a>
+          <a class="nav-link nav-link--cta" href="./start-project.html#start-project-form">Start a project</a>
         </nav>
       </div>
     </header>
 
     <!-- Hero -->
-    <section class="hp-hero" aria-labelledby="hp-hero-title">
+    <section class="hp-hero hp-hero--desk" aria-labelledby="hp-hero-title">
+      <video class="hp-hero__video" data-src="./assets/hero/Hero%20Animation.mp4"
+        muted playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
       <div class="container hp-hero__row">
         <div class="hp-hero__main">
+          <p class="hp-hero__eyebrow">BRAND &nbsp;/&nbsp; WEB &nbsp;/&nbsp; CONTENT</p>
           <h1 id="hp-hero-title" class="hp-hero__title">
-            <span class="hp-hero__title-line hp-hero__title-line--solid">Custom websites.</span>
-            <span class="hp-hero__title-line hp-hero__title-line--lit">Premium marketing.</span>
-            <span class="hp-hero__title-line hp-hero__title-line--glass">Brand identity development.</span>
+            Ideas built for<br />
+            <span class="hp-hero__accent">what’s next.</span>
           </h1>
-
+          <p class="hp-hero__lede">Baseline Studio is a creative studio for ambitious
+            businesses. We build brands, websites, and content
+            systems that look exceptional and actually work.</p>
           <div class="hp-hero__actions">
-            <a class="hp-btn" href="./start-project.html">Start a project</a>
-            <a class="hp-link" href="./portfolio.html">View selected work <span aria-hidden="true">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="hp-hero__side" aria-hidden="true">
-          <div class="hp-hero__orb">
-            <spline-viewer
-              data-desktop-url="https://prod.spline.design/T4DpV3dquqkq9EaR/scene.splinecode"
-              data-mobile-url="https://prod.spline.design/sgH3VTqhzw1TEvKb/scene.splinecode"
-            ></spline-viewer>
+            <a class="hp-btn" href="./start-project.html">Start a project <span aria-hidden="true">→</span></a>
+            <a class="hp-link" href="./portfolio.html">View our work <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <main id="main">
-      <section class="hp-section hp-work" aria-labelledby="hp-work-title">
-        <div class="container hp-section__intro">
-          <h2 id="hp-work-title">Selected work</h2>
-        </div>
+    </div>
+    </div>
 
-        <div class="container">
-          <a class="hp-work__feature" href="./work/nole-protein.html">
-            <figure class="hp-work__media">
-              <img
-                src="./assets/images/nole-homepage.png"
-                alt="Nole Protein website homepage"
-                loading="lazy"
-              />
-            </figure>
-            <div class="hp-work__caption">
-              <span class="hp-work__name">Nole Protein</span>
-              <span class="hp-work__descriptor">Brand identity · Website <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="hp-section hp-services" aria-labelledby="hp-services-title">
-        <div class="container hp-section__intro">
+    <main id="main" class="hp-editorial">
+      <section class="hp-section hp-services hp-services--editorial" aria-labelledby="hp-services-title">
+        <div class="container hp-editorial__heading">
           <h2 id="hp-services-title">Services</h2>
+          <p>Identity / Content / Websites</p>
         </div>
-
         <div class="container hp-services__list">
           <article class="hp-service hp-service--content">
-            <div class="hp-service__icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <circle cx="24" cy="36" r="17" />
-                <path d="M20 27.5 34 36 20 44.5Z" />
-                <path d="M45 23v26" />
-                <path d="M53 18v36" />
-                <path d="M61 25v22" />
-                <path d="M67 32v8" />
-              </svg>
-            </div>
+            
             <h3>Ongoing Content</h3>
-            <p>Plan. Create. Deliver. Repeat.</p>
+            <p>Stay visible without it taking over your week.</p>
+            <p>Consistent content that still feels like you.</p>
           </article>
-
           <article class="hp-service hp-service--brand">
-            <div class="hp-service__icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <path d="M36 9 52 35 43 51H29L20 35Z" />
-                <path d="M36 9v26" />
-                <circle cx="36" cy="35" r="5.5" />
-                <path d="M27 51h18v10H27Z" />
-              </svg>
-            </div>
-            <h3>Brand identity</h3>
-            <p>Discover. Design. Refine. Evolve.</p>
+            
+            <h3>Brand Identity</h3>
+            <p>A look and voice that match the quality of your work.</p>
+            <p>Clear, recognizable, and built to earn trust.</p>
           </article>
-
           <article class="hp-service hp-service--web">
-            <div class="hp-service__icon" aria-hidden="true">
-              <svg viewBox="0 0 72 72" focusable="false">
-                <rect x="14" y="17" width="44" height="36" rx="3" />
-                <path d="M14 27h44" />
-                <path d="M21 22h.1" />
-                <path d="M28 22h.1" />
-                <path d="M35 22h.1" />
-                <path d="M21 34h14v14H21Z" />
-                <path d="M41 34h11" />
-                <path d="M41 42h11" />
-                <path d="M41 49h11" />
-              </svg>
-            </div>
+            
             <h3>Websites</h3>
-            <p>Design. Build. Engage. Convert.</p>
+            <p>A clear home for your business.</p>
+            <p>Straightforward, easy to use, and built to do its job.</p>
           </article>
         </div>
       </section>
 
-      <section class="hp-section hp-premise" aria-labelledby="hp-premise-title">
+      <section class="hp-section hp-work hp-work--editorial" aria-labelledby="hp-work-title">
+        <div class="container hp-editorial__heading">
+          <h2 id="hp-work-title">Selected Work</h2>
+          <a href="./portfolio.html">View all work <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="container">
+          <div class="hp-projects" id="homepage-projects" role="region" aria-label="Selected projects; scroll to explore" tabindex="0">
+            <article class="hp-project" id="project-juniper" aria-labelledby="juniper-title">
+              <div class="hp-project__info">
+                <p class="hp-project__number">01 / Brand / Packaging / Web</p>
+                <h3 id="juniper-title">Juniper Bakery</h3>
+                <p>Brand Identity / Packaging / Web</p>
+              </div>
+              <img src="./assets/images/Juniper%20Bakery.png" alt="Juniper Bakery branding on paper bags and pastry packaging, surrounded by freshly baked bread and pastries" width="1448" height="1086" loading="lazy" />
+            </article>
+            <article class="hp-project" id="project-halden" aria-labelledby="halden-title">
+              <div class="hp-project__info">
+                <p class="hp-project__number">02 / Brand / Web</p>
+                <h3 id="halden-title">Halden Logistics</h3>
+                <p>Brand Identity / Web</p>
+              </div>
+              <img src="./assets/images/Halden%20Logistics.png" alt="Halden Logistics identity on a presentation folder and office wall beside a logistics website on a laptop" width="1448" height="1086" loading="lazy" />
+            </article>
+            <article class="hp-project" id="project-northline" aria-labelledby="northline-title">
+              <div class="hp-project__info">
+                <p class="hp-project__number">03 / Brand / Web</p>
+                <h3 id="northline-title">Northline Systems</h3>
+                <p>Brand Identity / Web</p>
+              </div>
+              <img src="./assets/images/Northline%20Systems.png" alt="Northline Systems identity on an office wall and mug, with its infrastructure dashboard on desktop monitors" width="1536" height="1024" loading="lazy" />
+            </article>
+          </div>
+          <div class="hp-project-nav" aria-label="Choose a project" hidden>
+            <button type="button" aria-controls="homepage-projects" aria-current="true" data-project="project-juniper">01 <span>Juniper Bakery</span></button>
+            <button type="button" aria-controls="homepage-projects" data-project="project-halden">02 <span>Halden Logistics</span></button>
+            <button type="button" aria-controls="homepage-projects" data-project="project-northline">03 <span>Northline Systems</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-section hp-premise hp-premise--editorial" aria-labelledby="hp-premise-title">
+        <div class="container hp-editorial__heading"><p>OUR APPROACH</p></div>
         <div class="container hp-premise__grid">
           <div class="hp-premise__lead">
-            <h2 id="hp-premise-title">
-              <span class="hp-premise__title-desktop">
-                AI should make the work
-                <span>more human. Not less.</span>
-              </span>
-              <span class="hp-premise__title-mobile" aria-hidden="true">
-                <span class="hp-premise__mline">AI should make the</span>
-                <span class="hp-premise__mline">work more human.</span>
-                <span class="hp-premise__mline">Not less.</span>
-              </span>
-            </h2>
+            <h2 id="hp-premise-title">Good work should<br class="hp-approach-break" /> <span class="hp-premise__accent">look the part.</span></h2>
           </div>
-
           <div class="hp-premise__body">
-            <p>
-              Technology should handle the repetition—not the thinking, taste,
-              or judgment.
-            </p>
-            <p>
-              We use AI behind the scenes to move faster and explore further,
-              leaving more time for what matters: creating work that feels
-              thoughtful, original, and unmistakably yours.
-            </p>
-          </div>
-        </div>
-
-        <div class="container hp-keyboard" aria-hidden="true">
-          <div class="hp-keyboard__surface">
-            <div class="hp-keyboard__row hp-keyboard__row--top">
-              <span class="hp-key">esc</span>
-              <span class="hp-key">1</span>
-              <span class="hp-key">2</span>
-              <span class="hp-key">3</span>
-              <span class="hp-key">4</span>
-              <span class="hp-key">5</span>
-              <span class="hp-key">6</span>
-              <span class="hp-key">7</span>
-              <span class="hp-key">8</span>
-              <span class="hp-key">9</span>
-              <span class="hp-key">0</span>
-              <span class="hp-key hp-key--wide">delete</span>
-            </div>
-            <div class="hp-keyboard__row">
-              <span class="hp-key hp-key--tab">tab</span>
-              <span class="hp-key">Q</span>
-              <span class="hp-key">W</span>
-              <span class="hp-key">E</span>
-              <span class="hp-key">R</span>
-              <span class="hp-key">T</span>
-              <span class="hp-key">Y</span>
-              <span class="hp-key">U</span>
-              <span class="hp-key">I</span>
-              <span class="hp-key">O</span>
-              <span class="hp-key">P</span>
-              <span class="hp-key">\</span>
-            </div>
-            <div class="hp-keyboard__row">
-              <span class="hp-key hp-key--caps">caps</span>
-              <span class="hp-key">A</span>
-              <span class="hp-key">S</span>
-              <span class="hp-key">D</span>
-              <span class="hp-key">F</span>
-              <span class="hp-key">G</span>
-              <span class="hp-key hp-key--lit">H</span>
-              <span class="hp-key hp-key--lit">J</span>
-              <span class="hp-key">K</span>
-              <span class="hp-key">L</span>
-              <span class="hp-key hp-key--return">return</span>
-            </div>
-            <div class="hp-keyboard__row">
-              <span class="hp-key hp-key--shift">shift</span>
-              <span class="hp-key">Z</span>
-              <span class="hp-key">X</span>
-              <span class="hp-key">C</span>
-              <span class="hp-key">V</span>
-              <span class="hp-key hp-key--lit">B</span>
-              <span class="hp-key hp-key--lit">N</span>
-              <span class="hp-key">M</span>
-              <span class="hp-key">,</span>
-              <span class="hp-key">.</span>
-              <span class="hp-key hp-key--shift">shift</span>
-            </div>
-            <div class="hp-keyboard__row hp-keyboard__row--bottom">
-              <span class="hp-key hp-key--mod">ctrl</span>
-              <span class="hp-key hp-key--mod">opt</span>
-              <span class="hp-key hp-key--mod">cmd</span>
-              <span class="hp-key hp-key--space hp-key--lit">space</span>
-              <span class="hp-key hp-key--mod hp-key--lit">cmd</span>
-              <span class="hp-key hp-key--mod">fn</span>
-              <span class="hp-key hp-key--arrow">←</span>
-              <span class="hp-key hp-key--arrow">→</span>
-            </div>
+            <p>Baseline Studio exists to close the gap between the quality of a business and how it shows up.</p>
+            <p>We started with websites, then the work grew into identity and ongoing content. The idea stayed the same.</p>
+            <a class="hp-approach-link" href="./about.html">ABOUT BASELINE <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
-
     </main>
 
-    <section class="hp-cta">
+    <section class="hp-cta hp-cta--editorial" aria-labelledby="closing-title">
       <div class="container hp-cta__inner">
-        <h2>
-          <span class="hp-cta__title-desktop">
-            Let’s make your brand
-            <span>unmistakably yours.</span>
-          </span>
-          <span class="hp-cta__title-mobile" aria-hidden="true">
-            <span class="hp-cta__mline">Let’s make your</span>
-            <span class="hp-cta__mline">brand <span class="hp-cta__mgrad">unmistakably</span></span>
-            <span class="hp-cta__mline"><span class="hp-cta__mgrad">yours.</span></span>
-          </span>
-        </h2>
-        <p>
-          Tell us what makes your business different. We’ll help you express it
-          through thoughtful strategy, original content, and creative work that
-          feels true to who you are.
-        </p>
-        <a class="hp-btn" href="./start-project.html">Start a project</a>
+        <p class="hp-cta__label">LET’S WORK TOGETHER</p>
+        <div class="hp-cta__grid">
+          <h2 id="closing-title">Let’s make your brand <span>unmistakably yours.</span></h2>
+          <div class="hp-cta__aside">
+            <p>Tell us what makes your business different. We’ll help you express it
+              through thoughtful strategy, original content, and creative work that
+              feels true to who you are.</p>
+            <a class="hp-btn" href="./start-project.html">Start a project <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© Baseline Studio 2026</p>
+    <footer class="site-footer hp-footer">
+      <div class="container hp-footer__inner">
+        <a class="hp-footer__brand" href="./index.html" aria-label="Baseline Studio home">
+          <img src="./assets/images/White%20logo.svg" alt="Baseline Studio" width="2568" height="412" loading="lazy" />
+        </a>
+        <nav class="hp-footer__nav" aria-label="Footer">
+          <a href="./portfolio.html">Work</a>
+          <a href="#hp-services-title">Services</a>
+          <a href="./about.html">About</a>
+          <a href="./start-project.html#start-project-form">Start a project</a>
+        </nav>
+        <p class="hp-footer__copyright">© Baseline Studio 2026</p>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="./script.js?v=mobile-spline-10" defer></script>
+    <script src="./script.js?v=editorial-projects-1" defer></script>
   </body>
 </html>
